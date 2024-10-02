@@ -1,0 +1,13 @@
+C:\Users\tuanhue\Desktop\QR007\QR007\bin\Debug\QR007.exe.config
+C:\Users\tuanhue\Desktop\QR007\QR007\bin\Debug\QR007.exe
+C:\Users\tuanhue\Desktop\QR007\QR007\bin\Debug\QR007.pdb
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.Forms.LoginForm.resources
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.Properties.Resources.resources
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.csproj.GenerateResource.cache
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.csproj.CoreCompileInputs.cache
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.exe
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.pdb
+C:\Users\tuanhue\Desktop\QR007\QR007\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.csproj.CopyComplete
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.Forms.ChuyenChungTuNhapKho.resources
+C:\Users\tuanhue\Desktop\QR007\QR007\obj\Debug\QR007.csprojAssemblyReference.cache
