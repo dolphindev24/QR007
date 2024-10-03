@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace QR007
 {
-    public class Helper
+    public static class Helper
     {
-        public string UserName { get; set; }
-        public string ID { get; set; }
+        public static string UserName { get; set; }
+        public static string ID { get; set; }
     }
 }

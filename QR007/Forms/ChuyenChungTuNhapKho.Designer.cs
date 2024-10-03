@@ -29,476 +29,498 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChuyenChungTuNhapKho));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbxTeNVNK = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_name = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbxLoaiDH = new System.Windows.Forms.ComboBox();
+            this.tbxMaDH = new System.Windows.Forms.TextBox();
             this.btnSoanDon = new System.Windows.Forms.Button();
             this.btnKetChuyen = new System.Windows.Forms.Button();
             this.btnTraCuu = new System.Windows.Forms.Button();
             this.btnTraNhapKho = new System.Windows.Forms.Button();
             this.btnPhucHoiPhieuNK = new System.Windows.Forms.Button();
-            this.tbxIDNVNhapKho = new System.Windows.Forms.TextBox();
-            this.tbxMaVatLieu = new System.Windows.Forms.TextBox();
-            this.tbxBoMonCheTao = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbxMaDH = new System.Windows.Forms.TextBox();
-            this.tbxQuyCach = new System.Windows.Forms.TextBox();
-            this.cbxLoaiDH = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tbxSoDong = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbxSoDong = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHuyChon = new System.Windows.Forms.Button();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tbxSLCTNK = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbxTongSoLuongDaChon = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tbxSoDongDuocChon = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbxSoDong1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnHuyChon = new System.Windows.Forms.Button();
+            this.Checkbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbxMaVatLieu1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tbxMaDonCong = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
+            this.tbxMaDonCong = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbxMaVatLieu1 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // tableLayoutPanel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.tbxTeNVNK);
-            this.panel1.Controls.Add(this.btnSoanDon);
-            this.panel1.Controls.Add(this.btnKetChuyen);
-            this.panel1.Controls.Add(this.btnTraCuu);
-            this.panel1.Controls.Add(this.btnTraNhapKho);
-            this.panel1.Controls.Add(this.btnPhucHoiPhieuNK);
-            this.panel1.Controls.Add(this.tbxIDNVNhapKho);
-            this.panel1.Controls.Add(this.tbxMaVatLieu);
-            this.panel1.Controls.Add(this.tbxBoMonCheTao);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tbxMaDH);
-            this.panel1.Controls.Add(this.tbxQuyCach);
-            this.panel1.Controls.Add(this.cbxLoaiDH);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 142);
-            this.panel1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.97181F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.44776F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.35821F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 661);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 9;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.72655F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.02385F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.39587F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.472178F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.631161F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.074722F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.472178F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.233704F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSoanDon, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnKetChuyen, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnPhucHoiPhieuNK, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnTraNhapKho, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnTraCuu, 6, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1258, 128);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(130, 122);
+            this.tableLayoutPanel3.TabIndex = 49;
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(13, 16);
+            this.label14.Location = new System.Drawing.Point(3, 7);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(124, 16);
-            this.label14.TabIndex = 29;
+            this.label14.TabIndex = 30;
             this.label14.Text = "訂單類型 Loại DH";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 73);
+            this.label2.Location = new System.Drawing.Point(3, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 18);
-            this.label2.TabIndex = 28;
+            this.label2.TabIndex = 31;
             this.label2.Text = "訂購代號 Mã DH";
             // 
-            // tbxTeNVNK
+            // label3
             // 
-            this.tbxTeNVNK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxTeNVNK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxTeNVNK.Location = new System.Drawing.Point(555, 100);
-            this.tbxTeNVNK.Name = "tbxTeNVNK";
-            this.tbxTeNVNK.Size = new System.Drawing.Size(205, 24);
-            this.tbxTeNVNK.TabIndex = 9;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 18);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "規格 Quy cách";
             // 
-            // btnSoanDon
+            // tableLayoutPanel6
             // 
-            this.btnSoanDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSoanDon.BackColor = System.Drawing.Color.White;
-            this.btnSoanDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSoanDon.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoanDon.Image = ((System.Drawing.Image)(resources.GetObject("btnSoanDon.Image")));
-            this.btnSoanDon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSoanDon.Location = new System.Drawing.Point(778, 3);
-            this.btnSoanDon.Name = "btnSoanDon";
-            this.btnSoanDon.Size = new System.Drawing.Size(90, 134);
-            this.btnSoanDon.TabIndex = 10;
-            this.btnSoanDon.Text = "準備申請 Soạn đơn";
-            this.btnSoanDon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSoanDon.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.txt_name, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.txtID, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.textBox2, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.textBox3, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(551, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 4;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(238, 122);
+            this.tableLayoutPanel6.TabIndex = 43;
             // 
-            // btnKetChuyen
+            // txt_name
             // 
-            this.btnKetChuyen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKetChuyen.BackColor = System.Drawing.Color.White;
-            this.btnKetChuyen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKetChuyen.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKetChuyen.Image = ((System.Drawing.Image)(resources.GetObject("btnKetChuyen.Image")));
-            this.btnKetChuyen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnKetChuyen.Location = new System.Drawing.Point(874, 3);
-            this.btnKetChuyen.Name = "btnKetChuyen";
-            this.btnKetChuyen.Size = new System.Drawing.Size(90, 134);
-            this.btnKetChuyen.TabIndex = 11;
-            this.btnKetChuyen.Text = "轉移 \r\nKết chuyển";
-            this.btnKetChuyen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnKetChuyen.UseVisualStyleBackColor = false;
+            this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_name.Location = new System.Drawing.Point(3, 93);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(225, 24);
+            this.txt_name.TabIndex = 9;
             // 
-            // btnTraCuu
+            // txtID
             // 
-            this.btnTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuu.BackColor = System.Drawing.Color.White;
-            this.btnTraCuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraCuu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuu.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuu.Image")));
-            this.btnTraCuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTraCuu.Location = new System.Drawing.Point(970, 3);
-            this.btnTraCuu.Name = "btnTraCuu";
-            this.btnTraCuu.Size = new System.Drawing.Size(90, 134);
-            this.btnTraCuu.TabIndex = 12;
-            this.btnTraCuu.Text = "抬頭\r\nTra cứu";
-            this.btnTraCuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTraCuu.UseVisualStyleBackColor = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(3, 63);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(225, 24);
+            this.txtID.TabIndex = 8;
             // 
-            // btnTraNhapKho
+            // textBox2
             // 
-            this.btnTraNhapKho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraNhapKho.BackColor = System.Drawing.Color.White;
-            this.btnTraNhapKho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraNhapKho.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraNhapKho.Image = ((System.Drawing.Image)(resources.GetObject("btnTraNhapKho.Image")));
-            this.btnTraNhapKho.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTraNhapKho.Location = new System.Drawing.Point(1066, 3);
-            this.btnTraNhapKho.Name = "btnTraNhapKho";
-            this.btnTraNhapKho.Size = new System.Drawing.Size(90, 134);
-            this.btnTraNhapKho.TabIndex = 13;
-            this.btnTraNhapKho.Text = "簽入倉庫\r\nTra nhập kho";
-            this.btnTraNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTraNhapKho.UseVisualStyleBackColor = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(3, 33);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(225, 24);
+            this.textBox2.TabIndex = 6;
             // 
-            // btnPhucHoiPhieuNK
+            // textBox3
             // 
-            this.btnPhucHoiPhieuNK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPhucHoiPhieuNK.BackColor = System.Drawing.Color.White;
-            this.btnPhucHoiPhieuNK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPhucHoiPhieuNK.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhucHoiPhieuNK.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoiPhieuNK.Image")));
-            this.btnPhucHoiPhieuNK.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPhucHoiPhieuNK.Location = new System.Drawing.Point(1162, 3);
-            this.btnPhucHoiPhieuNK.Name = "btnPhucHoiPhieuNK";
-            this.btnPhucHoiPhieuNK.Size = new System.Drawing.Size(90, 134);
-            this.btnPhucHoiPhieuNK.TabIndex = 14;
-            this.btnPhucHoiPhieuNK.Text = "恢復倉單\r\nPhục hồi phiếu NK";
-            this.btnPhucHoiPhieuNK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPhucHoiPhieuNK.UseVisualStyleBackColor = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(3, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(225, 24);
+            this.textBox3.TabIndex = 7;
             // 
-            // tbxIDNVNhapKho
+            // tableLayoutPanel5
             // 
-            this.tbxIDNVNhapKho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxIDNVNhapKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxIDNVNhapKho.Location = new System.Drawing.Point(555, 70);
-            this.tbxIDNVNhapKho.Name = "tbxIDNVNhapKho";
-            this.tbxIDNVNhapKho.Size = new System.Drawing.Size(205, 24);
-            this.tbxIDNVNhapKho.TabIndex = 8;
-            // 
-            // tbxMaVatLieu
-            // 
-            this.tbxMaVatLieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxMaVatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMaVatLieu.Location = new System.Drawing.Point(555, 41);
-            this.tbxMaVatLieu.Name = "tbxMaVatLieu";
-            this.tbxMaVatLieu.Size = new System.Drawing.Size(205, 24);
-            this.tbxMaVatLieu.TabIndex = 7;
-            // 
-            // tbxBoMonCheTao
-            // 
-            this.tbxBoMonCheTao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxBoMonCheTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBoMonCheTao.Location = new System.Drawing.Point(555, 11);
-            this.tbxBoMonCheTao.Name = "tbxBoMonCheTao";
-            this.tbxBoMonCheTao.Size = new System.Drawing.Size(205, 24);
-            this.tbxBoMonCheTao.TabIndex = 6;
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(362, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 4;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(183, 122);
+            this.tableLayoutPanel5.TabIndex = 42;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(377, 73);
+            this.label6.Location = new System.Drawing.Point(3, 66);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 18);
-            this.label6.TabIndex = 18;
+            this.label6.Size = new System.Drawing.Size(177, 18);
+            this.label6.TabIndex = 19;
             this.label6.Text = "倉庫員工 NV nhập kho";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(377, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 18);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "材料代碼 Mã vật liệu";
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(377, 14);
+            this.label4.Location = new System.Drawing.Point(3, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 18);
-            this.label4.TabIndex = 16;
+            this.label4.Size = new System.Drawing.Size(177, 18);
+            this.label4.TabIndex = 17;
             this.label4.Text = "製造部 Bộ môn chế tạo";
             // 
-            // tbxMaDH
+            // label5
             // 
-            this.tbxMaDH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMaDH.Location = new System.Drawing.Point(143, 70);
-            this.tbxMaDH.Name = "tbxMaDH";
-            this.tbxMaDH.Size = new System.Drawing.Size(205, 24);
-            this.tbxMaDH.TabIndex = 4;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(177, 18);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "材料代碼 Mã vật liệu";
             // 
-            // tbxQuyCach
+            // tableLayoutPanel4
             // 
-            this.tbxQuyCach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxQuyCach.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxQuyCach.Location = new System.Drawing.Point(143, 100);
-            this.tbxQuyCach.Name = "tbxQuyCach";
-            this.tbxQuyCach.Size = new System.Drawing.Size(205, 24);
-            this.tbxQuyCach.TabIndex = 5;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.textBox1, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.cbxLoaiDH, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tbxMaDH, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(139, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(217, 122);
+            this.tableLayoutPanel4.TabIndex = 41;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(3, 63);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(204, 24);
+            this.textBox1.TabIndex = 6;
             // 
             // cbxLoaiDH
             // 
-            this.cbxLoaiDH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxLoaiDH.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxLoaiDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxLoaiDH.FormattingEnabled = true;
             this.cbxLoaiDH.Items.AddRange(new object[] {
             "1. Xuất khẩu",
             "2. Nội địa",
             "3. Khác"});
-            this.cbxLoaiDH.Location = new System.Drawing.Point(143, 11);
+            this.cbxLoaiDH.Location = new System.Drawing.Point(3, 3);
             this.cbxLoaiDH.Name = "cbxLoaiDH";
-            this.cbxLoaiDH.Size = new System.Drawing.Size(205, 26);
-            this.cbxLoaiDH.TabIndex = 3;
+            this.cbxLoaiDH.Size = new System.Drawing.Size(204, 26);
+            this.cbxLoaiDH.TabIndex = 4;
             // 
-            // label3
+            // tbxMaDH
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "規格 Quy cách";
+            this.tbxMaDH.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxMaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMaDH.Location = new System.Drawing.Point(3, 33);
+            this.tbxMaDH.Name = "tbxMaDH";
+            this.tbxMaDH.Size = new System.Drawing.Size(204, 24);
+            this.tbxMaDH.TabIndex = 5;
             // 
-            // panel2
+            // btnSoanDon
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(3, 148);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1250, 187);
-            this.panel2.TabIndex = 1;
+            this.btnSoanDon.BackColor = System.Drawing.Color.White;
+            this.btnSoanDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSoanDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSoanDon.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSoanDon.Image = ((System.Drawing.Image)(resources.GetObject("btnSoanDon.Image")));
+            this.btnSoanDon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSoanDon.Location = new System.Drawing.Point(795, 6);
+            this.btnSoanDon.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.btnSoanDon.Name = "btnSoanDon";
+            this.btnSoanDon.Size = new System.Drawing.Size(88, 119);
+            this.btnSoanDon.TabIndex = 44;
+            this.btnSoanDon.Text = "準備申請 \r\nSoạn đơn";
+            this.btnSoanDon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSoanDon.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // btnKetChuyen
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1250, 187);
-            this.dataGridView1.TabIndex = 9;
+            this.btnKetChuyen.BackColor = System.Drawing.Color.White;
+            this.btnKetChuyen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKetChuyen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKetChuyen.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKetChuyen.Image = ((System.Drawing.Image)(resources.GetObject("btnKetChuyen.Image")));
+            this.btnKetChuyen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnKetChuyen.Location = new System.Drawing.Point(889, 6);
+            this.btnKetChuyen.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.btnKetChuyen.Name = "btnKetChuyen";
+            this.btnKetChuyen.Size = new System.Drawing.Size(90, 119);
+            this.btnKetChuyen.TabIndex = 45;
+            this.btnKetChuyen.Text = "轉移 \r\nKết chuyển";
+            this.btnKetChuyen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnKetChuyen.UseVisualStyleBackColor = false;
+            // 
+            // btnTraCuu
+            // 
+            this.btnTraCuu.BackColor = System.Drawing.Color.White;
+            this.btnTraCuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraCuu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTraCuu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuu.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuu.Image")));
+            this.btnTraCuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTraCuu.Location = new System.Drawing.Point(985, 6);
+            this.btnTraCuu.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.btnTraCuu.Name = "btnTraCuu";
+            this.btnTraCuu.Size = new System.Drawing.Size(83, 119);
+            this.btnTraCuu.TabIndex = 46;
+            this.btnTraCuu.Text = "抬頭\r\nTra cứu";
+            this.btnTraCuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTraCuu.UseVisualStyleBackColor = false;
+            this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
+            // 
+            // btnTraNhapKho
+            // 
+            this.btnTraNhapKho.BackColor = System.Drawing.Color.White;
+            this.btnTraNhapKho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraNhapKho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTraNhapKho.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraNhapKho.Image = ((System.Drawing.Image)(resources.GetObject("btnTraNhapKho.Image")));
+            this.btnTraNhapKho.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTraNhapKho.Location = new System.Drawing.Point(1074, 3);
+            this.btnTraNhapKho.Name = "btnTraNhapKho";
+            this.btnTraNhapKho.Size = new System.Drawing.Size(88, 122);
+            this.btnTraNhapKho.TabIndex = 47;
+            this.btnTraNhapKho.Text = "簽入倉庫\r\nTra nhập kho";
+            this.btnTraNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTraNhapKho.UseVisualStyleBackColor = false;
+            // 
+            // btnPhucHoiPhieuNK
+            // 
+            this.btnPhucHoiPhieuNK.BackColor = System.Drawing.Color.White;
+            this.btnPhucHoiPhieuNK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPhucHoiPhieuNK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPhucHoiPhieuNK.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhucHoiPhieuNK.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoiPhieuNK.Image")));
+            this.btnPhucHoiPhieuNK.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPhucHoiPhieuNK.Location = new System.Drawing.Point(1168, 6);
+            this.btnPhucHoiPhieuNK.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.btnPhucHoiPhieuNK.Name = "btnPhucHoiPhieuNK";
+            this.btnPhucHoiPhieuNK.Size = new System.Drawing.Size(87, 119);
+            this.btnPhucHoiPhieuNK.TabIndex = 48;
+            this.btnPhucHoiPhieuNK.Text = "恢復倉單\r\nPhục hồi phiếu NK";
+            this.btnPhucHoiPhieuNK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPhucHoiPhieuNK.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 137);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1258, 229);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tbxSoDong);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 192);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1252, 34);
+            this.panel1.TabIndex = 0;
+            // 
+            // tbxSoDong
+            // 
+            this.tbxSoDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxSoDong.Enabled = false;
+            this.tbxSoDong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSoDong.Location = new System.Drawing.Point(115, 6);
+            this.tbxSoDong.Name = "tbxSoDong";
+            this.tbxSoDong.ReadOnly = true;
+            this.tbxSoDong.Size = new System.Drawing.Size(99, 23);
+            this.tbxSoDong.TabIndex = 36;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 344);
+            this.label7.Location = new System.Drawing.Point(6, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 16);
-            this.label7.TabIndex = 2;
+            this.label7.TabIndex = 35;
             this.label7.Text = "行號 Số dòng";
             // 
-            // tbxSoDong
+            // panel2
             // 
-            this.tbxSoDong.Enabled = false;
-            this.tbxSoDong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSoDong.Location = new System.Drawing.Point(117, 341);
-            this.tbxSoDong.Name = "tbxSoDong";
-            this.tbxSoDong.ReadOnly = true;
-            this.tbxSoDong.Size = new System.Drawing.Size(99, 23);
-            this.tbxSoDong.TabIndex = 27;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1252, 183);
+            this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // dataGridView1
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(3, 431);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1250, 158);
-            this.panel3.TabIndex = 28;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Checkbox});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1252, 183);
+            this.dataGridView1.TabIndex = 10;
             // 
-            // dataGridView2
+            // tableLayoutPanel8
             // 
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1250, 158);
-            this.dataGridView2.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.tbxSLCTNK);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.tbxTongSoLuongDaChon);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.tbxSoDongDuocChon);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.tbxSoDong1);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.btnHuyChon);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 595);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1257, 62);
-            this.panel4.TabIndex = 29;
-            // 
-            // tbxSLCTNK
-            // 
-            this.tbxSLCTNK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSLCTNK.Enabled = false;
-            this.tbxSLCTNK.Location = new System.Drawing.Point(1144, 20);
-            this.tbxSLCTNK.Name = "tbxSLCTNK";
-            this.tbxSLCTNK.Size = new System.Drawing.Size(108, 20);
-            this.tbxSLCTNK.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(899, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(239, 32);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "剩餘數量可依訂單備貨\r\nSố lượng có thể NK còn lại theo DDH";
-            // 
-            // tbxTongSoLuongDaChon
-            // 
-            this.tbxTongSoLuongDaChon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxTongSoLuongDaChon.Enabled = false;
-            this.tbxTongSoLuongDaChon.Location = new System.Drawing.Point(778, 20);
-            this.tbxTongSoLuongDaChon.Name = "tbxTongSoLuongDaChon";
-            this.tbxTongSoLuongDaChon.Size = new System.Drawing.Size(108, 20);
-            this.tbxTongSoLuongDaChon.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(659, 14);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 32);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "所選總數量\r\nTổng SL đã chọn";
-            // 
-            // tbxSoDongDuocChon
-            // 
-            this.tbxSoDongDuocChon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSoDongDuocChon.Enabled = false;
-            this.tbxSoDongDuocChon.Location = new System.Drawing.Point(519, 20);
-            this.tbxSoDongDuocChon.Name = "tbxSoDongDuocChon";
-            this.tbxSoDongDuocChon.Size = new System.Drawing.Size(108, 20);
-            this.tbxSoDongDuocChon.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(382, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 32);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "選定的行號\r\nSố dòng được chọn";
-            // 
-            // tbxSoDong1
-            // 
-            this.tbxSoDong1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSoDong1.Enabled = false;
-            this.tbxSoDong1.Location = new System.Drawing.Point(235, 20);
-            this.tbxSoDong1.Name = "tbxSoDong1";
-            this.tbxSoDong1.Size = new System.Drawing.Size(108, 20);
-            this.tbxSoDong1.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(166, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 32);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "行號 \r\nSố dòng";
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.04928F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.95071F));
+            this.tableLayoutPanel8.Controls.Add(this.btnHuyChon, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 606);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1258, 52);
+            this.tableLayoutPanel8.TabIndex = 39;
             // 
             // btnHuyChon
             // 
@@ -510,136 +532,335 @@
             this.btnHuyChon.ForeColor = System.Drawing.Color.Black;
             this.btnHuyChon.Location = new System.Drawing.Point(3, 3);
             this.btnHuyChon.Name = "btnHuyChon";
-            this.btnHuyChon.Size = new System.Drawing.Size(135, 54);
-            this.btnHuyChon.TabIndex = 15;
+            this.btnHuyChon.Size = new System.Drawing.Size(132, 46);
+            this.btnHuyChon.TabIndex = 16;
             this.btnHuyChon.Text = "取消選擇全部\r\nHủy chọn tất cả";
             this.btnHuyChon.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 8;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.76999F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.523809F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.57862F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.23091F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.96137F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14106F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.19227F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.51213F));
+            this.tableLayoutPanel9.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label11, 6, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox8, 3, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label9, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox6, 5, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label10, 4, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox9, 7, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox7, 1, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(141, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1114, 46);
+            this.tableLayoutPanel9.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(32, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "行號 Số dòng";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(753, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(239, 32);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "剩餘數量可依訂單備貨\r\nSố lượng có thể NK còn lại theo DDH";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.Enabled = false;
+            this.textBox8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(380, 11);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(99, 23);
+            this.textBox8.TabIndex = 39;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(243, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 32);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "選定的行號\r\nSố dòng được chọn";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Enabled = false;
+            this.textBox6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(627, 11);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(98, 23);
+            this.textBox6.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(508, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 32);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "所選總數量\r\nTổng SL đã chọn";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Enabled = false;
+            this.textBox9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(998, 11);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(99, 23);
+            this.textBox9.TabIndex = 40;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.Enabled = false;
+            this.textBox7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(134, 11);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(85, 23);
+            this.textBox7.TabIndex = 38;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 435);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1258, 165);
+            this.panel3.TabIndex = 40;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1258, 165);
+            this.dataGridView2.TabIndex = 11;
+            // 
+            // Checkbox
+            // 
+            this.Checkbox.HeaderText = "Chọn";
+            this.Checkbox.Name = "Checkbox";
+            this.Checkbox.Width = 38;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 372);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1258, 57);
+            this.tableLayoutPanel10.TabIndex = 41;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.tbxMaVatLieu1);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.tbxMaDonCong);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 370);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel11);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1250, 55);
-            this.groupBox1.TabIndex = 30;
+            this.groupBox1.Size = new System.Drawing.Size(1252, 51);
+            this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查找單純形詳細信息 Tra cứu chi tiết đơn công";
             // 
-            // tbxMaVatLieu1
+            // tableLayoutPanel11
             // 
-            this.tbxMaVatLieu1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMaVatLieu1.Location = new System.Drawing.Point(611, 26);
-            this.tbxMaVatLieu1.Name = "tbxMaVatLieu1";
-            this.tbxMaVatLieu1.Size = new System.Drawing.Size(226, 23);
-            this.tbxMaVatLieu1.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(447, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(158, 18);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "材料代號 Mã vật liệu";
-            // 
-            // tbxMaDonCong
-            // 
-            this.tbxMaDonCong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMaDonCong.Location = new System.Drawing.Point(167, 26);
-            this.tbxMaDonCong.Name = "tbxMaDonCong";
-            this.tbxMaDonCong.Size = new System.Drawing.Size(226, 23);
-            this.tbxMaDonCong.TabIndex = 1;
+            this.tableLayoutPanel11.ColumnCount = 4;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.32263F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.59711F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.5634F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.67737F));
+            this.tableLayoutPanel11.Controls.Add(this.tbxMaDonCong, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label13, 2, 0);
+            this.tableLayoutPanel11.Controls.Add(this.tbxMaVatLieu1, 3, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(1246, 30);
+            this.tableLayoutPanel11.TabIndex = 0;
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(9, 27);
+            this.label12.Location = new System.Drawing.Point(10, 6);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 18);
-            this.label12.TabIndex = 0;
+            this.label12.TabIndex = 1;
             this.label12.Text = "單工碼 Mã đơn công";
+            // 
+            // tbxMaDonCong
+            // 
+            this.tbxMaDonCong.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxMaDonCong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMaDonCong.Location = new System.Drawing.Point(168, 3);
+            this.tbxMaDonCong.Name = "tbxMaDonCong";
+            this.tbxMaDonCong.Size = new System.Drawing.Size(226, 23);
+            this.tbxMaDonCong.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(623, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(158, 18);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "材料代號 Mã vật liệu";
+            // 
+            // tbxMaVatLieu1
+            // 
+            this.tbxMaVatLieu1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxMaVatLieu1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMaVatLieu1.Location = new System.Drawing.Point(791, 3);
+            this.tbxMaVatLieu1.Name = "tbxMaVatLieu1";
+            this.tbxMaVatLieu1.Size = new System.Drawing.Size(226, 23);
+            this.tbxMaVatLieu1.TabIndex = 4;
             // 
             // ChuyenChungTuNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1257, 657);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.tbxSoDong);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1264, 661);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChuyenChungTuNhapKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyển chứng từ nhập kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ChuyenChungTuNhapKho_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tbxSoDong;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnHuyChon;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbxMaDH;
-        private System.Windows.Forms.TextBox tbxQuyCach;
-        private System.Windows.Forms.TextBox tbxIDNVNhapKho;
-        private System.Windows.Forms.TextBox tbxMaVatLieu;
-        private System.Windows.Forms.TextBox tbxBoMonCheTao;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TextBox txt_name;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSoanDon;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbxLoaiDH;
+        private System.Windows.Forms.TextBox tbxMaDH;
         private System.Windows.Forms.Button btnKetChuyen;
         private System.Windows.Forms.Button btnTraCuu;
         private System.Windows.Forms.Button btnTraNhapKho;
         private System.Windows.Forms.Button btnPhucHoiPhieuNK;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbxSoDong;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox tbxSLCTNK;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbxTongSoLuongDaChon;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbxSoDongDuocChon;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbxSoDong1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnHuyChon;
-        private System.Windows.Forms.TextBox tbxTeNVNK;
+        private System.Windows.Forms.Button btnSoanDon;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Checkbox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbxMaVatLieu1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox tbxMaDonCong;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox cbxLoaiDH;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tbxMaDonCong;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbxMaVatLieu1;
     }
 }

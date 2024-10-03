@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.lbTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbUsername = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txbPassword = new System.Windows.Forms.TextBox();
@@ -62,14 +62,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "QR007";
             // 
-            // txbUsername
+            // txtID
             // 
-            this.txbUsername.BackColor = System.Drawing.SystemColors.Control;
-            this.txbUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUsername.Location = new System.Drawing.Point(79, 177);
-            this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(240, 27);
-            this.txbUsername.TabIndex = 2;
+            this.txtID.BackColor = System.Drawing.SystemColors.Control;
+            this.txtID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(79, 177);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(240, 27);
+            this.txtID.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -149,7 +149,7 @@
             this.Controls.Add(this.checkboxSaveAccount);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txbPassword);
-            this.Controls.Add(this.txbUsername);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -167,7 +167,7 @@
 
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbUsername;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txbPassword;
