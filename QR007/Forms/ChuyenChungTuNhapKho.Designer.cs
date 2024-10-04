@@ -646,7 +646,6 @@
             this.btnSoanDon.TabIndex = 44;
             this.btnSoanDon.Text = "準備申請 \r\nSoạn đơn";
             this.btnSoanDon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSoanDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSoanDon.UseVisualStyleBackColor = false;
             // 
             // btnKetChuyen
@@ -663,7 +662,6 @@
             this.btnKetChuyen.TabIndex = 45;
             this.btnKetChuyen.Text = "轉移 \r\nKết chuyển";
             this.btnKetChuyen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnKetChuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnKetChuyen.UseVisualStyleBackColor = false;
             // 
             // btnPhucHoiPhieuNK
@@ -680,7 +678,6 @@
             this.btnPhucHoiPhieuNK.TabIndex = 48;
             this.btnPhucHoiPhieuNK.Text = "恢復倉單\r\nPhục hồi phiếu NK";
             this.btnPhucHoiPhieuNK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPhucHoiPhieuNK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPhucHoiPhieuNK.UseVisualStyleBackColor = false;
             // 
             // btnTraNhapKho
@@ -697,7 +694,6 @@
             this.btnTraNhapKho.TabIndex = 47;
             this.btnTraNhapKho.Text = "簽入倉庫\r\nTra nhập kho";
             this.btnTraNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTraNhapKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTraNhapKho.UseVisualStyleBackColor = false;
             // 
             // btnTraCuu
@@ -714,7 +710,6 @@
             this.btnTraCuu.TabIndex = 46;
             this.btnTraCuu.Text = "抬頭\r\nTra cứu";
             this.btnTraCuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTraCuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTraCuu.UseVisualStyleBackColor = false;
             this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 

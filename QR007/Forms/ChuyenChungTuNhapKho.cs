@@ -33,12 +33,22 @@ namespace QR007.Forms
         {
                 dataGridView1.Columns.Clear();
                 DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-                checkBoxColumn.HeaderText = "Select";
+                checkBoxColumn.HeaderText = "Chọn";
                 checkBoxColumn.Name = "checkBoxColumn";
                 checkBoxColumn.Width = 50;
                 checkBoxColumn.ReadOnly = false;
                 // Thêm cột Checkbox vào DataGridView
                 dataGridView1.Columns.Add(checkBoxColumn);
+        }
+
+        //Set column header
+        private void SetColumnHeaders()
+        {
+            // Đổi tên tiêu đề các cột
+            dataGridView1.Columns["oeb01"].HeaderText = "Số lượng";
+            dataGridView1.Columns["oeb03"].HeaderText = "Hạng mục";
+            dataGridView1.Columns["''"].HeaderText = "Số cont";
+            dataGridView1.Columns["oea04"].HeaderText = "Tên khách hàng";
         }
 
         private void ChuyenChungTuNhapKho_Load(object sender, EventArgs e)
@@ -71,6 +81,8 @@ namespace QR007.Forms
                         AddCheckboxToDatagridview();
                         dt = connect.ExcuteQuery(sql);
                         dataGridView1.DataSource = dt;
+                        SetColumnHeaders();
+
                         //Update rows
                         RowCount();
                     }

@@ -20,5 +20,8 @@ namespace QR007
             // Thêm cột Checkbox vào DataGridView
             dataGridView.Columns.Add(checkBoxColumn);
         }
+
+        
+
     }
 }
