@@ -21,8 +21,8 @@ namespace QR007.Forms
         public LoginForm()
         {
             InitializeComponent();
-            txtID.Text = "H23275";
-            txbPassword.Text = "it@H23275";
+            txtID.Text = Properties.Settings.Default.UserID;
+            txbPassword.Text = Properties.Settings.Default.Password;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -52,6 +52,21 @@ namespace QR007.Forms
                         }
                         else
                         {
+                            // Lưu thông tin đăng nhập nếu checkbox được chọn
+                            if (checkboxSaveAccount.Checked) // Thay 'chkRememberMe' bằng tên checkbox của bạn
+                            {
+                                Properties.Settings.Default.UserID = txtID.Text.Trim();
+                                Properties.Settings.Default.Password = txbPassword.Text.Trim();
+                                Properties.Settings.Default.Save();
+                            }
+                            else
+                            {
+                                // Xóa thông tin đăng nhập nếu checkbox không được chọn
+                                Properties.Settings.Default.UserID = string.Empty;
+                                Properties.Settings.Default.Password = string.Empty;
+                                Properties.Settings.Default.Save();
+                            } 
+
                             Helper.ID = txtID.Text.Trim();
                             ChuyenChungTuNhapKho cctnk = new ChuyenChungTuNhapKho();
                             cctnk.Show();
