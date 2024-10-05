@@ -102,6 +102,8 @@
             // checkboxSaveAccount
             // 
             this.checkboxSaveAccount.AutoSize = true;
+            this.checkboxSaveAccount.Checked = true;
+            this.checkboxSaveAccount.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkboxSaveAccount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkboxSaveAccount.Location = new System.Drawing.Point(58, 264);
             this.checkboxSaveAccount.Name = "checkboxSaveAccount";
