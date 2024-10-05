@@ -8,14 +8,16 @@ namespace QR007.Forms
 {
     public partial class ChuyenChungTuNhapKho : Form
     {
-        string conn_MESPDB = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.40.31)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=topprod)));User ID=lelong;Password=lelong;";
-
+        private string conn_MESPDB = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.40.31)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=topprod)));User ID=lelong;Password=lelong;";
+        private string conn_orclpdb = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.40.12)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MESPDB)));User ID=lelong;Password=lelong;";
+        
         Connection connect = new Connection();
         public ChuyenChungTuNhapKho()
         {
             InitializeComponent();
             cbxLoaiDH.SelectedIndex = 0;
-            tbxSoDong.Text = "0";
+            tbxSoDong.Text = "0"; 
+            txbSoDongTop.Text = "0";
             Helper.DoubleBufferded(dataGridView1, true); 
             Helper.DoubleBufferded(dataGridView2, true);
         }
@@ -23,15 +25,22 @@ namespace QR007.Forms
         //Update rowcount
         private void RowCount()
         {
+            //dataGridView1
             if (dataGridView1.DataSource != null)
             {
                 int rowCount = dataGridView1.Rows.Count - 1;
                 tbxSoDong.Text = rowCount.ToString();
             }
+            //dataGridView2
+            if (dataGridView2.DataSource != null) 
+            {
+                int rowCount = dataGridView2.Rows.Count - 1;
+                txbSoDongTop.Text = rowCount.ToString();
+            }
         }
 
-        //Set column header
-        private void SetColumnHeaders()
+        //Set column header dgv1
+        private void SetColumnHeadersDgv1()
         {
             dataGridView1.AutoGenerateColumns = false;
 
@@ -50,6 +59,21 @@ namespace QR007.Forms
             dataGridView1.Columns["sfv09"].DataPropertyName = "qty"; //SL da nhap
         }
 
+        //Set column header dgv2
+        private void SetColumnHeadersDgv2()
+        {
+            dataGridView2.AutoGenerateColumns = false;
+
+            dataGridView2.Columns["codeqty_wno"].DataPropertyName = "codeqty_wno";
+            dataGridView2.Columns["codeqty_workid"].DataPropertyName = "codeqty_workid";
+            dataGridView2.Columns["workorder_item"].DataPropertyName = "workorder_item";
+            dataGridView2.Columns["sfe09"].DataPropertyName = "''";
+            dataGridView2.Columns["lima021"].DataPropertyName = "workorder_vnitemspec";
+            dataGridView2.Columns["sfb08"].DataPropertyName = "workorder_qty";
+            dataGridView2.Columns["stockin_qtyN"].DataPropertyName = "stockin_qtyN";
+            dataGridView2.Columns["qrc17"].DataPropertyName = "stockin_qty";
+        }
+
         private void ChuyenChungTuNhapKho_Load(object sender, EventArgs e)
         {
             txtID.Text = Helper.ID;
@@ -64,10 +88,10 @@ namespace QR007.Forms
                 case 0: //Xuat khau
                     try
                     {
+                        connect.OpenConnect(conn_MESPDB);
                         dataGridView1.DataSource = null;
+                        dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
-
-                        connect.OpenConnect();
 
                         string sql = "SELECT oeb01,oeb03,'',oea04,tc_oxf002,ima01, " +
                         "CASE WHEN LENGTH(TRIM(TRANSLATE(SUBSTR(ima01, -2, 2), '0123456789', ' '))) " +
@@ -82,10 +106,10 @@ namespace QR007.Forms
                         DataTable dt = new DataTable(); 
 
                         dt = connect.ExcuteQuery(sql);
-                        SetColumnHeaders();
+                        SetColumnHeadersDgv1();
 
                         dataGridView1.DataSource = dt;
-                        //SetColumnHeaders();
+                        //SetColumnHeadersDgv1();
 
                         //Update rows
                         RowCount();
@@ -97,16 +121,16 @@ namespace QR007.Forms
                     }
                     finally
                     {
-                        connect.CloseConnect();
+                        connect.CloseConnect(conn_MESPDB);
                     }
                     break;
                 case 1: //Noi dia
                     try
                     {
+                        connect.OpenConnect(conn_MESPDB);
                         dataGridView1.DataSource = null;
+                        dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
-
-                        connect.OpenConnect(); //Open connect
 
                         string sqltr = "SELECT * FROM ( " +
                        "SELECT oeb01, oeb03, oea04, tc_oxf002, ima01, " +
@@ -137,7 +161,7 @@ namespace QR007.Forms
 
                         DataTable dt = new DataTable();
                         dt = connect.ExcuteQuery(sqltr);
-                        SetColumnHeaders();
+                        SetColumnHeadersDgv1();
                         dataGridView1.DataSource = dt;
 
                         RowCount(); //Update rowcount
@@ -149,23 +173,31 @@ namespace QR007.Forms
                     }
                     finally
                     {
-                        connect.CloseConnect();
+                        connect.CloseConnect(conn_MESPDB);
                     }
                     break;
                 case 2: //Khac
                     try
                     {
+                        connect.OpenConnect(conn_orclpdb);
                         dataGridView1.DataSource = null;
+                        dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
-                        connect.OpenConnect();
 
-                        string sqltr = "";
+                        string sqltr = "SELECT * FROM ( " +
+                           "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
+                           "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(workorder_stockinqty, 0) stockin_qty " +
+                           "FROM QR_CODEQTY, QR_WORKORDER " +
+                           "WHERE codeqty_workid = (SELECT MAX(codeqty_workid) FROM QR_CODEQTY a WHERE a.codeqty_wno = workorder_wno) " +
+                           "AND workorder_wno = codeqty_wno AND workorder_status <> 8 " +
+                           ") WHERE stockin_qtyN > 0";
+
 
                         DataTable dt = new DataTable();
                         dt = connect.ExcuteQuery(sqltr);
 
-                        SetColumnHeaders();
-                        dataGridView1.DataSource = dt;
+                        SetColumnHeadersDgv2();
+                        dataGridView2.DataSource = dt;
 
                         RowCount();
                     }
@@ -176,7 +208,7 @@ namespace QR007.Forms
                     }
                     finally
                     {
-                        connect.CloseConnect();
+                        connect.CloseConnect(conn_orclpdb);
                     }
                     break;
 
@@ -205,9 +237,95 @@ namespace QR007.Forms
 
         }
 
+        //Checkbox checked
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dataGridView1.Columns["dt00"].Index && e.RowIndex >= 0)
+            {
+                try
+                {
+                    connect.OpenConnect(conn_orclpdb);
+                   // connect.OpenConnect(conn_MESPDB);
 
+                    // Get the current value of the checkbox
+                    bool isChecked = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["dt00"].Value);
+
+                    // Uncheck other checkboxes
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.Index != e.RowIndex) // If not the current row
+                        {
+                            row.Cells["dt00"].Value = false; // Uncheck
+                        }
+                    }
+
+                    // Update the value of the current checkbox
+                    // Change the state (check/uncheck)
+                    dataGridView1.Rows[e.RowIndex].Cells["dt00"].Value = !isChecked;
+
+                    // Get oeb01 value from current row
+                    var ima01Value = dataGridView1.Rows[e.RowIndex].Cells["ima01"].Value.ToString();
+
+                    // Check the checkbox status after updating
+                    if (!isChecked) // If the new checkbox is selected
+                    {
+                        
+                        string sqltr = "SELECT * FROM ( " +
+                           "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
+                           "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(workorder_stockinqty, 0) stockin_qty " +
+                           "FROM QR_CODEQTY, QR_WORKORDER " +
+                           "WHERE codeqty_workid = (SELECT MAX(codeqty_workid) FROM QR_CODEQTY a WHERE a.codeqty_wno = workorder_wno) " +
+                           "AND workorder_wno = codeqty_wno AND workorder_status <> 8 " +
+                           ") WHERE stockin_qtyN > 0 and workorder_item = '" + ima01Value + "'";
+
+                        // Mở kết nối Oracle trước khi thực thi câu lệnh
+                        using (OracleConnection connection = new OracleConnection(conn_orclpdb))
+                        {
+                            connection.Open(); // Mở kết nối
+
+                            using (OracleCommand sql_ora = new OracleCommand(sqltr, connection))
+                            {
+                                using (OracleDataReader dt_qrc = sql_ora.ExecuteReader())
+                                {
+                                    while (dt_qrc.Read())
+                                    {
+                                        dataGridView2.Rows.Add(false,
+                                                               dt_qrc["codeqty_wno"].ToString(),
+                                                               dt_qrc["codeqty_workid"].ToString(),
+                                                               dt_qrc["workorder_item"].ToString(),
+                                                               check_add_vitriluu1(dt_qrc["codeqty_wno"].ToString()),
+                                                               dt_qrc["workorder_vnitemspec"].ToString(),
+                                                               dt_qrc["workorder_qty"].ToString(),
+                                                               dt_qrc["stockin_qtyN"].ToString(),
+                                                               dt_qrc["stockin_qtyN"].ToString(),
+                                                               dt_qrc["stockin_qty"].ToString());
+                                    }
+                                }
+                            }
+                        }
+
+                        RowCount();
+                    }
+                    else
+                    {
+                        dataGridView2.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connect.CloseConnect(conn_orclpdb);
+                   // connect.CloseConnect(conn_MESPDB);
+                }
+            }
+        }
+        private object check_add_vitriluu1(string doncong)
+        {
+            String MAVL = "a";
+            return MAVL;
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -216,6 +334,15 @@ namespace QR007.Forms
             {
                 if (e.RowIndex % 2 == 0)
                     dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+            }
+        }
+
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.RowIndex % 2 == 0)
+                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
             }
         }
     }

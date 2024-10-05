@@ -47,6 +47,7 @@
             this.tbxTeNVNK = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,16 +67,25 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tbxSLCTNK = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.clk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.codeqty_wno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeqty_workid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workorder_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sfe09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lima021 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sfb08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockin_qtyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qrc17N2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qrc17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -84,7 +94,7 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 18);
+            this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "規格 Quy cách";
             // 
@@ -143,7 +153,7 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(377, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 18);
+            this.label5.Size = new System.Drawing.Size(158, 18);
             this.label5.TabIndex = 17;
             this.label5.Text = "材料代碼 Mã vật liệu";
             // 
@@ -155,7 +165,7 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(377, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 18);
+            this.label6.Size = new System.Drawing.Size(169, 18);
             this.label6.TabIndex = 18;
             this.label6.Text = "倉庫員工 NV nhập kho";
             // 
@@ -287,7 +297,7 @@
             this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(13, 16);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 16);
+            this.label14.Size = new System.Drawing.Size(124, 16);
             this.label14.TabIndex = 29;
             this.label14.Text = "訂單類型 Loại DH";
             // 
@@ -319,6 +329,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1257, 142);
             this.panel1.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 18);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "訂購代號 Mã DH";
             // 
             // dataGridView1
             // 
@@ -367,7 +387,7 @@
             this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(9, 27);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(150, 18);
+            this.label12.Size = new System.Drawing.Size(152, 18);
             this.label12.TabIndex = 0;
             this.label12.Text = "單工碼 Mã đơn công";
             // 
@@ -385,7 +405,7 @@
             this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(447, 27);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(146, 18);
+            this.label13.Size = new System.Drawing.Size(158, 18);
             this.label13.TabIndex = 2;
             this.label13.Text = "材料代號 Mã vật liệu";
             // 
@@ -435,7 +455,7 @@
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(166, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 32);
+            this.label8.Size = new System.Drawing.Size(60, 32);
             this.label8.TabIndex = 1;
             this.label8.Text = "行號 \r\nSố dòng";
             // 
@@ -457,7 +477,7 @@
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(382, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 32);
+            this.label9.Size = new System.Drawing.Size(131, 32);
             this.label9.TabIndex = 3;
             this.label9.Text = "選定的行號\r\nSố dòng được chọn";
             // 
@@ -479,7 +499,7 @@
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(659, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 32);
+            this.label10.Size = new System.Drawing.Size(113, 32);
             this.label10.TabIndex = 5;
             this.label10.Text = "所選總數量\r\nTổng SL đã chọn";
             // 
@@ -501,7 +521,7 @@
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(899, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(260, 32);
+            this.label11.Size = new System.Drawing.Size(239, 32);
             this.label11.TabIndex = 7;
             this.label11.Text = "剩餘數量可依訂單備貨\r\nSố lượng có thể NK còn lại theo DDH";
             // 
@@ -534,17 +554,6 @@
             this.panel4.Size = new System.Drawing.Size(1257, 62);
             this.panel4.TabIndex = 36;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1250, 158);
-            this.dataGridView2.TabIndex = 10;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -556,15 +565,96 @@
             this.panel3.Size = new System.Drawing.Size(1250, 158);
             this.panel3.TabIndex = 35;
             // 
-            // label2
+            // dataGridView2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 18);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "訂購代號 Mã DH";
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clk,
+            this.codeqty_wno,
+            this.codeqty_workid,
+            this.workorder_item,
+            this.sfe09,
+            this.lima021,
+            this.sfb08,
+            this.stockin_qtyN,
+            this.qrc17N2,
+            this.qrc17});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1250, 158);
+            this.dataGridView2.TabIndex = 12;
+            // 
+            // clk
+            // 
+            this.clk.HeaderText = "勾選 Chọn";
+            this.clk.Name = "clk";
+            // 
+            // codeqty_wno
+            // 
+            this.codeqty_wno.HeaderText = "工單號碼 Mã đơn công";
+            this.codeqty_wno.Name = "codeqty_wno";
+            this.codeqty_wno.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codeqty_wno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // codeqty_workid
+            // 
+            this.codeqty_workid.HeaderText = "Column1作業編號 Mã thao tác";
+            this.codeqty_workid.Name = "codeqty_workid";
+            this.codeqty_workid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codeqty_workid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // workorder_item
+            // 
+            this.workorder_item.HeaderText = "料件編號 Mã vật liệu";
+            this.workorder_item.Name = "workorder_item";
+            this.workorder_item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.workorder_item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sfe09
+            // 
+            this.sfe09.HeaderText = "儲位 Vị Trí Lưu";
+            this.sfe09.Name = "sfe09";
+            this.sfe09.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sfe09.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lima021
+            // 
+            this.lima021.HeaderText = "規格 Quy cách";
+            this.lima021.Name = "lima021";
+            this.lima021.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.lima021.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sfb08
+            // 
+            this.sfb08.HeaderText = "工單數量 Số lượng sx";
+            this.sfb08.Name = "sfb08";
+            this.sfb08.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sfb08.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // stockin_qtyN
+            // 
+            this.stockin_qtyN.HeaderText = "可入庫量 SL có thể nhập kho";
+            this.stockin_qtyN.Name = "stockin_qtyN";
+            this.stockin_qtyN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.stockin_qtyN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // qrc17N2
+            // 
+            this.qrc17N2.HeaderText = "預設入庫量 SL nhập kho dự tính";
+            this.qrc17N2.Name = "qrc17N2";
+            this.qrc17N2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.qrc17N2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // qrc17
+            // 
+            this.qrc17.HeaderText = "已入庫量 SL đã nhập kho";
+            this.qrc17.Name = "qrc17";
+            this.qrc17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.qrc17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Form1
             // 
@@ -588,8 +678,8 @@
             this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,8 +723,18 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbxSLCTNK;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_wno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_workid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workorder_item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sfe09;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lima021;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sfb08;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockin_qtyN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qrc17N2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qrc17;
     }
 }
