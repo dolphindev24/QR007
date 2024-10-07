@@ -17,13 +17,13 @@ namespace QR007.Forms
             InitializeComponent();
             cbxLoaiDH.SelectedIndex = 0;
             tbxSoDong.Text = "0"; 
-            txbSoDongTop.Text = "0";
+            tbxSoDongBot.Text = "0";
             Helper.DoubleBufferded(dataGridView1, true); 
             Helper.DoubleBufferded(dataGridView2, true);
         }
 
         //Update rowcount
-        private void RowCount()
+        private void RowCountDgv1()
         {
             //dataGridView1
             if (dataGridView1.DataSource != null)
@@ -31,12 +31,12 @@ namespace QR007.Forms
                 int rowCount = dataGridView1.Rows.Count;
                 tbxSoDong.Text = rowCount.ToString();
             }
-            //dataGridView2
-            if (dataGridView2.DataSource != null) 
-            {
-                int rowCount = dataGridView2.Rows.Count;
-                txbSoDongTop.Text = rowCount.ToString();
-            }
+        }
+
+        private void RowCountDgv2()
+        {
+            int rowCount = dataGridView2.Rows.Count;
+            tbxSoDongBot.Text = rowCount.ToString();
         }
 
         //Set column header dgv1
@@ -113,7 +113,7 @@ namespace QR007.Forms
                         //SetColumnHeadersDgv1();
 
                         //Update rows
-                        RowCount();
+                        RowCountDgv1();
                     }
                     catch (Exception ex)
                     {
@@ -166,7 +166,7 @@ namespace QR007.Forms
                         SetColumnHeadersDgv1();
                         dataGridView1.DataSource = dt;
 
-                        RowCount(); //Update rowcount
+                        RowCountDgv1(); //Update rowcount
                     }
                     catch (Exception ex)
                     {
@@ -185,7 +185,7 @@ namespace QR007.Forms
                         dataGridView1.DataSource = null;
                         dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
-                        //cbxVitri.SelectedIndex = 2;
+                        cbxVitri.SelectedIndex = 2;
 
                         string sqltr = "SELECT * FROM ( " +
                            "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
@@ -202,7 +202,7 @@ namespace QR007.Forms
                         SetColumnHeadersDgv2();
                         dataGridView2.DataSource = dt;
 
-                        RowCount();
+                        RowCountDgv2();
                     }
                     catch (Exception ex)
                     {
@@ -272,63 +272,7 @@ namespace QR007.Forms
                     // Check the checkbox status after updating
                     if (!isChecked) // If the new checkbox is selected
                     {
-                        dataGridView2.Rows.Clear();
-                        string sqltr = "SELECT * FROM ( " +
-                           "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
-                           "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(workorder_stockinqty, 0) stockin_qty " +
-                           "FROM QR_CODEQTY, QR_WORKORDER " +
-                           "WHERE codeqty_workid = (SELECT MAX(codeqty_workid) FROM QR_CODEQTY a WHERE a.codeqty_wno = workorder_wno) " +
-                           "AND workorder_wno = codeqty_wno AND workorder_status <> 8 " +
-                           ") WHERE stockin_qtyN > 0 and workorder_item = '" + ima01Value + "'";
-
-                        // Mở kết nối Oracle trước khi thực thi câu lệnh
-                        using (OracleConnection connection = new OracleConnection(conn_orclpdb))
-                        {
-                            connection.Open(); // Mở kết nối
-
-                            using (OracleCommand sql_ora = new OracleCommand(sqltr, connection))
-                            {
-                                using (OracleDataReader dt_qrc = sql_ora.ExecuteReader())
-                                {
-                                    while (dt_qrc.Read())
-                                    {
-                                        string checkViTriLuu = check_add_vitriluu1(dt_qrc["codeqty_wno"].ToString());
-
-                                        //check cbxViTri value
-                                        //int selectedIndex = cbxVitri.SelectedIndex;
-
-                                        if (cbxVitri.SelectedIndex == 0 && checkViTriLuu == "X")
-                                        {
-                                            dataGridView2.Rows.Add(false,
-                                                               dt_qrc["codeqty_wno"].ToString(),
-                                                               dt_qrc["codeqty_workid"].ToString(),
-                                                               dt_qrc["workorder_item"].ToString(),
-                                                               checkViTriLuu,
-                                                               dt_qrc["workorder_vnitemspec"].ToString(),
-                                                               dt_qrc["workorder_qty"].ToString(),
-                                                               dt_qrc["stockin_qtyN"].ToString(),
-                                                               dt_qrc["stockin_qtyN"].ToString(),
-                                                               dt_qrc["stockin_qty"].ToString());
-                                        }
-                                        else if (cbxVitri.SelectedIndex == 1 && (checkViTriLuu == "X" || checkViTriLuu == "T"))
-                                        {
-                                            dataGridView2.Rows.Add(false,
-                                                               dt_qrc["codeqty_wno"].ToString(),
-                                                               dt_qrc["codeqty_workid"].ToString(),
-                                                               dt_qrc["workorder_item"].ToString(),
-                                                               checkViTriLuu,
-                                                               dt_qrc["workorder_vnitemspec"].ToString(),
-                                                               dt_qrc["workorder_qty"].ToString(),
-                                                               dt_qrc["stockin_qtyN"].ToString(),
-                                                               dt_qrc["stockin_qtyN"].ToString(),
-                                                               dt_qrc["stockin_qty"].ToString());
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        RowCount();
+                        LoadDataToDatagridview2(ima01Value);
                     }
                     else
                     {
@@ -348,8 +292,7 @@ namespace QR007.Forms
             }
         }
 
-        //check location, if selected index (cbx1) = 1 ==> selected index (cbx2) = 1 ==> location is X
-        //if selected index = 2 ==> selected index (cbx2) = 2 ==> laction is X and T
+        //Check vi tri
         private string check_add_vitriluu1(string doncong)
         {
             string checkViTriLuu = string.Empty;
@@ -413,6 +356,53 @@ namespace QR007.Forms
             return checkViTriLuu;
         }
 
+        //Load data from database to datagridview
+        private void LoadDataToDatagridview2(string ima01Value)
+        {
+            dataGridView2.Rows.Clear();
+            string sqltr = "SELECT * FROM ( " +
+               "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
+               "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(workorder_stockinqty, 0) stockin_qty " +
+               "FROM QR_CODEQTY, QR_WORKORDER " +
+               "WHERE codeqty_workid = (SELECT MAX(codeqty_workid) FROM QR_CODEQTY a WHERE a.codeqty_wno = workorder_wno) " +
+               "AND workorder_wno = codeqty_wno AND workorder_status <> 8 " +
+               ") WHERE stockin_qtyN > 0 and workorder_item = '" + ima01Value + "'";
+
+            // Mở kết nối Oracle trước khi thực thi câu lệnh
+            using (OracleConnection connection = new OracleConnection(conn_orclpdb))
+            {
+                connection.Open(); // Mở kết nối
+
+                using (OracleCommand sql_ora = new OracleCommand(sqltr, connection))
+                {
+                    using (OracleDataReader dt_qrc = sql_ora.ExecuteReader())
+                    {
+                        while (dt_qrc.Read())
+                        {
+                            string checkViTriLuu = check_add_vitriluu1(dt_qrc["codeqty_wno"].ToString());
+
+                            //check cbxViTri value
+                            if (cbxVitri.SelectedIndex == 0 && checkViTriLuu == "X" ||
+                                (cbxVitri.SelectedIndex == 1 && (checkViTriLuu == "X" || checkViTriLuu == "T")))
+                            {
+                                dataGridView2.Rows.Add(false,
+                                                   dt_qrc["codeqty_wno"].ToString(),
+                                                   dt_qrc["codeqty_workid"].ToString(),
+                                                   dt_qrc["workorder_item"].ToString(),
+                                                   checkViTriLuu,
+                                                   dt_qrc["workorder_vnitemspec"].ToString(),
+                                                   dt_qrc["workorder_qty"].ToString(),
+                                                   dt_qrc["stockin_qtyN"].ToString(),
+                                                   dt_qrc["stockin_qtyN"].ToString(),
+                                                   dt_qrc["stockin_qty"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            RowCountDgv2();
+        }
+
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -439,6 +429,8 @@ namespace QR007.Forms
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
+                tbxSoDongBot.Text = "0";
+                tbxSoDong.Text = "0";
 
             }
             else if (selected == 1)
@@ -446,6 +438,8 @@ namespace QR007.Forms
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
+                tbxSoDongBot.Text = "0";
+                tbxSoDong.Text = "0";
 
             }
             else if(selected == 2)
@@ -453,6 +447,8 @@ namespace QR007.Forms
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
+                tbxSoDongBot.Text = "0";
+                tbxSoDong.Text = "0";
 
             }
         }
@@ -461,12 +457,14 @@ namespace QR007.Forms
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if(row.Cells["dt00"].Value != null|| (bool)row.Cells["dt00"].Value == true)
+                if(row.Cells["dt00"].Value != null || (bool)row.Cells["dt00"].Value == true)
                 {
                     row.Cells["dt00"].Value = false;
                     dataGridView2.Rows.Clear();
+                    tbxSoDongBot.Text = "0";
                 }
             }
         }
+
     }
 }
