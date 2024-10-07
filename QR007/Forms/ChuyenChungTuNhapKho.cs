@@ -28,13 +28,13 @@ namespace QR007.Forms
             //dataGridView1
             if (dataGridView1.DataSource != null)
             {
-                int rowCount = dataGridView1.Rows.Count - 1;
+                int rowCount = dataGridView1.Rows.Count;
                 tbxSoDong.Text = rowCount.ToString();
             }
             //dataGridView2
             if (dataGridView2.DataSource != null) 
             {
-                int rowCount = dataGridView2.Rows.Count - 1;
+                int rowCount = dataGridView2.Rows.Count;
                 txbSoDongTop.Text = rowCount.ToString();
             }
         }
@@ -92,6 +92,7 @@ namespace QR007.Forms
                         dataGridView1.DataSource = null;
                         dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
+                        cbxVitri.SelectedIndex = 0;
 
                         string sql = "SELECT oeb01,oeb03,'',oea04,tc_oxf002,ima01, " +
                         "CASE WHEN LENGTH(TRIM(TRANSLATE(SUBSTR(ima01, -2, 2), '0123456789', ' '))) " +
@@ -131,6 +132,7 @@ namespace QR007.Forms
                         dataGridView1.DataSource = null;
                         dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
+                        cbxVitri.SelectedIndex = 1;
 
                         string sqltr = "SELECT * FROM ( " +
                        "SELECT oeb01, oeb03, oea04, tc_oxf002, ima01, " +
@@ -183,6 +185,7 @@ namespace QR007.Forms
                         dataGridView1.DataSource = null;
                         dataGridView2.DataSource = null;
                         tbxSoDong.Text = "0";
+                        //cbxVitri.SelectedIndex = 2;
 
                         string sqltr = "SELECT * FROM ( " +
                            "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
@@ -269,7 +272,7 @@ namespace QR007.Forms
                     // Check the checkbox status after updating
                     if (!isChecked) // If the new checkbox is selected
                     {
-                        
+                        dataGridView2.Rows.Clear();
                         string sqltr = "SELECT * FROM ( " +
                            "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
                            "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(workorder_stockinqty, 0) stockin_qty " +
@@ -289,16 +292,37 @@ namespace QR007.Forms
                                 {
                                     while (dt_qrc.Read())
                                     {
-                                        dataGridView2.Rows.Add(false,
+                                        string checkViTriLuu = check_add_vitriluu1(dt_qrc["codeqty_wno"].ToString());
+
+                                        //check cbxViTri value
+                                        //int selectedIndex = cbxVitri.SelectedIndex;
+
+                                        if (cbxVitri.SelectedIndex == 0 && checkViTriLuu == "X")
+                                        {
+                                            dataGridView2.Rows.Add(false,
                                                                dt_qrc["codeqty_wno"].ToString(),
                                                                dt_qrc["codeqty_workid"].ToString(),
                                                                dt_qrc["workorder_item"].ToString(),
-                                                               check_add_vitriluu1(dt_qrc["codeqty_wno"].ToString()),
+                                                               checkViTriLuu,
                                                                dt_qrc["workorder_vnitemspec"].ToString(),
                                                                dt_qrc["workorder_qty"].ToString(),
                                                                dt_qrc["stockin_qtyN"].ToString(),
                                                                dt_qrc["stockin_qtyN"].ToString(),
                                                                dt_qrc["stockin_qty"].ToString());
+                                        }
+                                        else if (cbxVitri.SelectedIndex == 1 && (checkViTriLuu == "X" || checkViTriLuu == "T"))
+                                        {
+                                            dataGridView2.Rows.Add(false,
+                                                               dt_qrc["codeqty_wno"].ToString(),
+                                                               dt_qrc["codeqty_workid"].ToString(),
+                                                               dt_qrc["workorder_item"].ToString(),
+                                                               checkViTriLuu,
+                                                               dt_qrc["workorder_vnitemspec"].ToString(),
+                                                               dt_qrc["workorder_qty"].ToString(),
+                                                               dt_qrc["stockin_qtyN"].ToString(),
+                                                               dt_qrc["stockin_qtyN"].ToString(),
+                                                               dt_qrc["stockin_qty"].ToString());
+                                        }
                                     }
                                 }
                             }
@@ -308,7 +332,8 @@ namespace QR007.Forms
                     }
                     else
                     {
-                        dataGridView2.DataSource = null;
+                        //dataGridView2.DataSource = null;
+                        dataGridView2.Rows.Clear();
                     }
                 }
                 catch (Exception ex)
@@ -322,10 +347,70 @@ namespace QR007.Forms
                 }
             }
         }
-        private object check_add_vitriluu1(string doncong)
+
+        //check location, if selected index (cbx1) = 1 ==> selected index (cbx2) = 1 ==> location is X
+        //if selected index = 2 ==> selected index (cbx2) = 2 ==> laction is X and T
+        private string check_add_vitriluu1(string doncong)
         {
-            String MAVL = "a";
-            return MAVL;
+            string checkViTriLuu = string.Empty;
+
+            try
+            {
+                connect.OpenConnect(conn_MESPDB);
+
+                    if (doncong.Substring(0, 5) == "BC511" || doncong.Substring(0, 5) == "BB511" ||
+                        doncong.Substring(0, 5) == "BC512" || doncong.Substring(0, 5) == "BB512" ||
+                        doncong.Substring(0, 5) == "BC510" || doncong.Substring(0, 5) == "BC51E")
+                    {
+                        checkViTriLuu = "X";
+                    }
+
+                    if (doncong.Substring(0, 5) == "BB51A" || doncong.Substring(0, 5) == "BC51A" ||
+                        doncong.Substring(0, 5) == "BC51B" || doncong.Substring(0, 5) == "BB51B" ||
+                        doncong.Substring(0, 5) == "BC51C")
+                    {
+                        checkViTriLuu = "T";
+                    }
+
+                    if (doncong.Substring(0, 5) == "BC521" || doncong.Substring(0, 5) == "BB521")
+                    {
+                        checkViTriLuu = "T";
+                    }
+
+                    if (doncong.Substring(0, 5) == "BC526" || doncong.Substring(0, 5) == "BB526" ||
+                        doncong.Substring(0, 5) == "BC52A" || doncong.Substring(0, 5) == "BB52A")
+                    {
+                        string sqltr1 = "SELECT UNIQUE sfe09 FROM sfe_file WHERE sfe01='" + doncong + "' " +
+                                        "AND regexp_like(SUBSTR(sfe07,1,1), '^[A-Z]') AND regexp_like(SUBSTR(sfe07,2,1), '^[0-9]') ";
+
+                        using (OracleConnection conn = new OracleConnection(conn_MESPDB))
+                        {
+                            OracleCommand cmd = new OracleCommand(sqltr1);
+                            OracleDataReader dr = cmd.ExecuteReader();
+
+                            if (dr.Read())
+                            {
+                                if (!dr.IsDBNull(dr.GetOrdinal("sfe09")))
+                                {
+                                    checkViTriLuu = dr["sfe09"].ToString();
+                                }
+                                else
+                                {
+                                    checkViTriLuu = "Null";
+                                }
+                            }
+                        }
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connect.CloseConnect(conn_MESPDB);
+            }
+            return checkViTriLuu;
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -343,6 +428,44 @@ namespace QR007.Forms
             {
                 if (e.RowIndex % 2 == 0)
                     dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+            }
+        }
+
+        private void cbxLoaiDH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selected = cbxLoaiDH.SelectedIndex;
+            if(selected == 0)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView2.DataSource = null;
+                dataGridView2.Rows.Clear();
+
+            }
+            else if (selected == 1)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView2.DataSource = null;
+                dataGridView2.Rows.Clear();
+
+            }
+            else if(selected == 2)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView2.DataSource = null;
+                dataGridView2.Rows.Clear();
+
+            }
+        }
+
+        private void cbxVitri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if(row.Cells["dt00"].Value != null|| (bool)row.Cells["dt00"].Value == true)
+                {
+                    row.Cells["dt00"].Value = false;
+                    dataGridView2.Rows.Clear();
+                }
             }
         }
     }
