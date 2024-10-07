@@ -62,7 +62,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.tbxSoDongBot = new System.Windows.Forms.TextBox();
+            this.tbxSoDong2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbxSoDong = new System.Windows.Forms.TextBox();
@@ -92,14 +92,14 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbxMVL = new System.Windows.Forms.TextBox();
+            this.tbxBoMonCT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxQuyCach = new System.Windows.Forms.TextBox();
             this.cbxLoaiDH = new System.Windows.Forms.ComboBox();
             this.tbxMaDH = new System.Windows.Forms.TextBox();
             this.btnSoanDon = new System.Windows.Forms.Button();
@@ -235,7 +235,7 @@
             this.cbxVitri.Items.AddRange(new object[] {
             "1.外銷 Xuất khẩu",
             "2.內銷 Nội địa",
-            "    "});
+            "3.其他 Khác"});
             this.cbxVitri.Location = new System.Drawing.Point(1039, 3);
             this.cbxVitri.Name = "cbxVitri";
             this.cbxVitri.Size = new System.Drawing.Size(151, 24);
@@ -391,7 +391,7 @@
             this.tableLayoutPanel9.Controls.Add(this.textBox6, 5, 0);
             this.tableLayoutPanel9.Controls.Add(this.label10, 4, 0);
             this.tableLayoutPanel9.Controls.Add(this.textBox9, 7, 0);
-            this.tableLayoutPanel9.Controls.Add(this.tbxSoDongBot, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbxSoDong2, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(141, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -481,17 +481,17 @@
             this.textBox9.Size = new System.Drawing.Size(99, 23);
             this.textBox9.TabIndex = 40;
             // 
-            // tbxSoDongBot
+            // tbxSoDong2
             // 
-            this.tbxSoDongBot.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbxSoDongBot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxSoDongBot.Enabled = false;
-            this.tbxSoDongBot.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSoDongBot.Location = new System.Drawing.Point(134, 11);
-            this.tbxSoDongBot.Name = "tbxSoDongBot";
-            this.tbxSoDongBot.ReadOnly = true;
-            this.tbxSoDongBot.Size = new System.Drawing.Size(85, 23);
-            this.tbxSoDongBot.TabIndex = 38;
+            this.tbxSoDong2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxSoDong2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxSoDong2.Enabled = false;
+            this.tbxSoDong2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSoDong2.Location = new System.Drawing.Point(134, 11);
+            this.tbxSoDong2.Name = "tbxSoDong2";
+            this.tbxSoDong2.ReadOnly = true;
+            this.tbxSoDong2.Size = new System.Drawing.Size(85, 23);
+            this.tbxSoDong2.TabIndex = 38;
             // 
             // tableLayoutPanel7
             // 
@@ -769,8 +769,8 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.txt_name, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.txtID, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.textBox2, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.textBox3, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tbxMVL, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.tbxBoMonCT, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(551, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -800,21 +800,21 @@
             this.txtID.Size = new System.Drawing.Size(225, 24);
             this.txtID.TabIndex = 8;
             // 
-            // textBox2
+            // tbxMVL
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(3, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 24);
-            this.textBox2.TabIndex = 6;
+            this.tbxMVL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMVL.Location = new System.Drawing.Point(3, 35);
+            this.tbxMVL.Name = "tbxMVL";
+            this.tbxMVL.Size = new System.Drawing.Size(225, 24);
+            this.tbxMVL.TabIndex = 6;
             // 
-            // textBox3
+            // tbxBoMonCT
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(3, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 24);
-            this.textBox3.TabIndex = 7;
+            this.tbxBoMonCT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBoMonCT.Location = new System.Drawing.Point(3, 3);
+            this.tbxBoMonCT.Name = "tbxBoMonCT";
+            this.tbxBoMonCT.Size = new System.Drawing.Size(225, 24);
+            this.tbxBoMonCT.TabIndex = 7;
             // 
             // tableLayoutPanel5
             // 
@@ -871,7 +871,7 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.tbxQuyCach, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.cbxLoaiDH, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tbxMaDH, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -885,14 +885,14 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(217, 128);
             this.tableLayoutPanel4.TabIndex = 41;
             // 
-            // textBox1
+            // tbxQuyCach
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 24);
-            this.textBox1.TabIndex = 6;
+            this.tbxQuyCach.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxQuyCach.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxQuyCach.Location = new System.Drawing.Point(3, 68);
+            this.tbxQuyCach.Name = "tbxQuyCach";
+            this.tbxQuyCach.Size = new System.Drawing.Size(204, 24);
+            this.tbxQuyCach.TabIndex = 6;
             // 
             // cbxLoaiDH
             // 
@@ -1066,7 +1066,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox tbxSoDongBot;
+        private System.Windows.Forms.TextBox tbxSoDong2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbxSoDong;
@@ -1096,14 +1096,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbxMVL;
+        private System.Windows.Forms.TextBox tbxBoMonCT;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxQuyCach;
         private System.Windows.Forms.ComboBox cbxLoaiDH;
         private System.Windows.Forms.TextBox tbxMaDH;
         private System.Windows.Forms.Button btnSoanDon;

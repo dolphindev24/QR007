@@ -17,7 +17,7 @@ namespace QR007.Forms
             InitializeComponent();
             cbxLoaiDH.SelectedIndex = 0;
             tbxSoDong.Text = "0"; 
-            tbxSoDongBot.Text = "0";
+            tbxSoDong2.Text = "0";
             Helper.DoubleBufferded(dataGridView1, true); 
             Helper.DoubleBufferded(dataGridView2, true);
         }
@@ -36,7 +36,7 @@ namespace QR007.Forms
         private void RowCountDgv2()
         {
             int rowCount = dataGridView2.Rows.Count;
-            tbxSoDongBot.Text = rowCount.ToString();
+            tbxSoDong2.Text = rowCount.ToString();
         }
 
         //Set column header dgv1
@@ -74,6 +74,15 @@ namespace QR007.Forms
             dataGridView2.Columns["qrc17"].DataPropertyName = "stockin_qty";
         }
 
+        //Clear field
+        private void Clear()
+        {
+            tbxMaDH.Text = string.Empty;
+            tbxQuyCach.Text = string.Empty;
+            tbxBoMonCT.Text = string.Empty;
+            tbxMVL.Text = string.Empty;
+        }
+
         private void ChuyenChungTuNhapKho_Load(object sender, EventArgs e)
         {
             txtID.Text = Helper.ID;
@@ -104,15 +113,19 @@ namespace QR007.Forms
                         "ta_oeb001 = tc_oxf001(+) " +
                         "AND oeb04 = ima01 AND oea01 = oeb01 AND(oeb70 = 'N' OR oeb70 IS NULL)";
 
+                        if (tbxMaDH.Text.Length > 0)
+                        {
+                            sql += " AND oeb01 LIKE '%" + tbxMaDH.Text.Trim() + "%'";
+                        }
+
+
                         DataTable dt = new DataTable(); 
 
                         dt = connect.ExcuteQuery(sql);
                         SetColumnHeadersDgv1();
 
                         dataGridView1.DataSource = dt;
-                        //SetColumnHeadersDgv1();
 
-                        //Update rows
                         RowCountDgv1();
                     }
                     catch (Exception ex)
@@ -254,16 +267,9 @@ namespace QR007.Forms
                     bool isChecked = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["dt00"].Value);
 
                     // Uncheck other checkboxes
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        if (row.Index != e.RowIndex) // If not the current row
-                        {
-                            row.Cells["dt00"].Value = false; // Uncheck
-                        }
-                    }
+                    UncheckOtherCheckboxes(e.RowIndex);
 
                     // Update the value of the current checkbox
-                    // Change the state (check/uncheck)
                     dataGridView1.Rows[e.RowIndex].Cells["dt00"].Value = !isChecked;
 
                     // Get oeb01 value from current row
@@ -273,11 +279,13 @@ namespace QR007.Forms
                     if (!isChecked) // If the new checkbox is selected
                     {
                         LoadDataToDatagridview2(ima01Value);
+                        RowCountDgv2();
                     }
                     else
                     {
                         //dataGridView2.DataSource = null;
                         dataGridView2.Rows.Clear();
+                        RowCountDgv2();
                     }
                 }
                 catch (Exception ex)
@@ -356,6 +364,18 @@ namespace QR007.Forms
             return checkViTriLuu;
         }
 
+        //Uncheck checkbox
+        private void UncheckOtherCheckboxes(int currentRowIndex)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Index != currentRowIndex && row.Cells["dt00"].Value != null && (bool)row.Cells["dt00"].Value)
+                {
+                    row.Cells["dt00"].Value = false; // Bỏ chọn checkbox
+                }
+            }
+        }
+
         //Load data from database to datagridview
         private void LoadDataToDatagridview2(string ima01Value)
         {
@@ -383,7 +403,8 @@ namespace QR007.Forms
 
                             //check cbxViTri value
                             if (cbxVitri.SelectedIndex == 0 && checkViTriLuu == "X" ||
-                                (cbxVitri.SelectedIndex == 1 && (checkViTriLuu == "X" || checkViTriLuu == "T")))
+                                (cbxVitri.SelectedIndex == 1 && checkViTriLuu == "T") || 
+                                (cbxVitri.SelectedIndex == 2 && (checkViTriLuu == "X" || checkViTriLuu == "T")))
                             {
                                 dataGridView2.Rows.Add(false,
                                                    dt_qrc["codeqty_wno"].ToString(),
@@ -400,7 +421,7 @@ namespace QR007.Forms
                     }
                 }
             }
-            RowCountDgv2();
+            //RowCountDgv2();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -429,27 +450,27 @@ namespace QR007.Forms
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
-                tbxSoDongBot.Text = "0";
+                tbxSoDong2.Text = "0";
                 tbxSoDong.Text = "0";
-
+                Clear();
             }
             else if (selected == 1)
             {
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
-                tbxSoDongBot.Text = "0";
+                tbxSoDong2.Text = "0";
                 tbxSoDong.Text = "0";
-
+                Clear();
             }
             else if(selected == 2)
             {
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
-                tbxSoDongBot.Text = "0";
+                tbxSoDong2.Text = "0";
                 tbxSoDong.Text = "0";
-
+                Clear();
             }
         }
 
@@ -457,14 +478,23 @@ namespace QR007.Forms
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if(row.Cells["dt00"].Value != null || (bool)row.Cells["dt00"].Value == true)
+                if(row.Cells["dt00"].Value != null && (bool)row.Cells["dt00"].Value == true)
                 {
-                    row.Cells["dt00"].Value = false;
+
+                    //row.Cells["dt00"].Value = false;
+                    //dataGridView2.Rows.Clear();
+
+                    // Lấy giá trị từ cột 'ima01' của hàng hiện tại
+                    string ima01Value = row.Cells["ima01"].Value.ToString();
+
+                    // Xóa các hàng trong dataGridView2
                     dataGridView2.Rows.Clear();
-                    tbxSoDongBot.Text = "0";
+
+                    // Load lại dữ liệu cho dataGridView2 dựa trên điều kiện mới từ cbxVitri
+                    LoadDataToDatagridview2(ima01Value);
+                    RowCountDgv2();
                 }
             }
         }
-
     }
 }
