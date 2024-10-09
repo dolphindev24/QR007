@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChuyenChungTuNhapKho));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,26 +43,16 @@
             this.cbxVitri = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.clk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codeqty_wno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workorder_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeqty_workid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sfe09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lima021 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sfb08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockin_qtyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qrc17N2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qrc17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnHuyChon = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbxSDDC = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbxTongSLDaChon = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbxSoLuongCoTheNKConLai = new System.Windows.Forms.TextBox();
             this.tbxSoDong2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -79,8 +70,6 @@
             this.ima01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ima021 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tc_oge001 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oga02 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ogb12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oeb12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sfv09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -107,6 +96,16 @@
             this.btnPhucHoiPhieuNK = new System.Windows.Forms.Button();
             this.btnTraCuu = new System.Windows.Forms.Button();
             this.btnTraNhapKho = new System.Windows.Forms.Button();
+            this.clk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.codeqty_wno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workorder_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeqty_workid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sfe09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lima021 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sfb08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockin_qtyN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qrc17N2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qrc17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel10.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -273,74 +272,10 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1258, 162);
-            this.dataGridView2.TabIndex = 11;
+            this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
-            // 
-            // clk
-            // 
-            this.clk.HeaderText = "勾選 Chọn";
-            this.clk.Name = "clk";
-            // 
-            // codeqty_wno
-            // 
-            this.codeqty_wno.HeaderText = "工單號碼 Mã đơn công";
-            this.codeqty_wno.Name = "codeqty_wno";
-            this.codeqty_wno.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codeqty_wno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // workorder_item
-            // 
-            this.workorder_item.HeaderText = "料件編號 Mã vật liệu";
-            this.workorder_item.Name = "workorder_item";
-            this.workorder_item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.workorder_item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // codeqty_workid
-            // 
-            this.codeqty_workid.HeaderText = "作業編號 Mã thao tác";
-            this.codeqty_workid.Name = "codeqty_workid";
-            // 
-            // sfe09
-            // 
-            this.sfe09.HeaderText = "儲位 Vị Trí Lưu";
-            this.sfe09.Name = "sfe09";
-            this.sfe09.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sfe09.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // lima021
-            // 
-            this.lima021.HeaderText = "規格 Quy cách";
-            this.lima021.Name = "lima021";
-            this.lima021.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.lima021.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sfb08
-            // 
-            this.sfb08.HeaderText = "工單數量 Số lượng sx";
-            this.sfb08.Name = "sfb08";
-            this.sfb08.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sfb08.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // stockin_qtyN
-            // 
-            this.stockin_qtyN.HeaderText = "可入庫量 SL có thể nhập kho";
-            this.stockin_qtyN.Name = "stockin_qtyN";
-            this.stockin_qtyN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.stockin_qtyN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // qrc17N2
-            // 
-            this.qrc17N2.HeaderText = "預設入庫量 SL nhập kho dự tính";
-            this.qrc17N2.Name = "qrc17N2";
-            this.qrc17N2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.qrc17N2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // qrc17
-            // 
-            this.qrc17.HeaderText = "已入庫量 SL đã nhập kho";
-            this.qrc17.Name = "qrc17";
-            this.qrc17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.qrc17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tableLayoutPanel8
             // 
@@ -372,6 +307,7 @@
             this.btnHuyChon.TabIndex = 16;
             this.btnHuyChon.Text = "取消選擇全部\r\nHủy chọn tất cả";
             this.btnHuyChon.UseVisualStyleBackColor = false;
+            this.btnHuyChon.Click += new System.EventHandler(this.btnHuyChon_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -386,11 +322,11 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.51213F));
             this.tableLayoutPanel9.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label11, 6, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBox8, 3, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbxSDDC, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.label9, 2, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBox6, 5, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbxTongSLDaChon, 5, 0);
             this.tableLayoutPanel9.Controls.Add(this.label10, 4, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBox9, 7, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbxSoLuongCoTheNKConLai, 7, 0);
             this.tableLayoutPanel9.Controls.Add(this.tbxSoDong2, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(141, 3);
@@ -423,17 +359,18 @@
             this.label11.TabIndex = 8;
             this.label11.Text = "剩餘數量可依訂單備貨\r\nSố lượng có thể NK còn lại theo DDH";
             // 
-            // textBox8
+            // tbxSDDC
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(380, 11);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(99, 23);
-            this.textBox8.TabIndex = 39;
+            this.tbxSDDC.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxSDDC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxSDDC.Enabled = false;
+            this.tbxSDDC.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSDDC.Location = new System.Drawing.Point(380, 11);
+            this.tbxSDDC.Name = "tbxSDDC";
+            this.tbxSDDC.ReadOnly = true;
+            this.tbxSDDC.Size = new System.Drawing.Size(99, 23);
+            this.tbxSDDC.TabIndex = 39;
+            this.tbxSDDC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -446,17 +383,18 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "選定的行號\r\nSố dòng được chọn";
             // 
-            // textBox6
+            // tbxTongSLDaChon
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(627, 11);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(98, 23);
-            this.textBox6.TabIndex = 37;
+            this.tbxTongSLDaChon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxTongSLDaChon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxTongSLDaChon.Enabled = false;
+            this.tbxTongSLDaChon.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTongSLDaChon.Location = new System.Drawing.Point(627, 11);
+            this.tbxTongSLDaChon.Name = "tbxTongSLDaChon";
+            this.tbxTongSLDaChon.ReadOnly = true;
+            this.tbxTongSLDaChon.Size = new System.Drawing.Size(98, 23);
+            this.tbxTongSLDaChon.TabIndex = 37;
+            this.tbxTongSLDaChon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -469,17 +407,18 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "所選總數量\r\nTổng SL đã chọn";
             // 
-            // textBox9
+            // tbxSoLuongCoTheNKConLai
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(998, 11);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(99, 23);
-            this.textBox9.TabIndex = 40;
+            this.tbxSoLuongCoTheNKConLai.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbxSoLuongCoTheNKConLai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxSoLuongCoTheNKConLai.Enabled = false;
+            this.tbxSoLuongCoTheNKConLai.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSoLuongCoTheNKConLai.Location = new System.Drawing.Point(998, 11);
+            this.tbxSoLuongCoTheNKConLai.Name = "tbxSoLuongCoTheNKConLai";
+            this.tbxSoLuongCoTheNKConLai.ReadOnly = true;
+            this.tbxSoLuongCoTheNKConLai.Size = new System.Drawing.Size(99, 23);
+            this.tbxSoLuongCoTheNKConLai.TabIndex = 40;
+            this.tbxSoLuongCoTheNKConLai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbxSoDong2
             // 
@@ -492,6 +431,7 @@
             this.tbxSoDong2.ReadOnly = true;
             this.tbxSoDong2.Size = new System.Drawing.Size(85, 23);
             this.tbxSoDong2.TabIndex = 38;
+            this.tbxSoDong2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel7
             // 
@@ -528,6 +468,7 @@
             this.tbxSoDong.ReadOnly = true;
             this.tbxSoDong.Size = new System.Drawing.Size(99, 23);
             this.tbxSoDong.TabIndex = 36;
+            this.tbxSoDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -551,17 +492,18 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dt00,
@@ -574,13 +516,12 @@
             this.ima01,
             this.ima021,
             this.tc_oge001,
-            this.oga02,
-            this.ogb12,
             this.oeb12,
             this.sfv09});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1252, 182);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -588,12 +529,13 @@
             // 
             // dt00
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.NullValue = false;
-            this.dt00.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.NullValue = false;
+            this.dt00.DefaultCellStyle = dataGridViewCellStyle3;
             this.dt00.HeaderText = "勾選 Chọn";
             this.dt00.Name = "dt00";
+            this.dt00.ReadOnly = true;
             this.dt00.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dt00.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -601,66 +543,67 @@
             // 
             this.ogb31.HeaderText = "訂單號碼 Mã ĐĐH";
             this.ogb31.Name = "ogb31";
+            this.ogb31.ReadOnly = true;
             // 
             // ogb32
             // 
             this.ogb32.HeaderText = "項次 Hạng mục";
             this.ogb32.Name = "ogb32";
+            this.ogb32.ReadOnly = true;
             // 
             // ogaud12
             // 
             this.ogaud12.HeaderText = "貨櫃 Số cont";
             this.ogaud12.Name = "ogaud12";
+            this.ogaud12.ReadOnly = true;
             // 
             // oea03
             // 
             this.oea03.HeaderText = "客戶名 Tên KH";
             this.oea03.Name = "oea03";
+            this.oea03.ReadOnly = true;
             // 
             // tc_oxf002
             // 
             this.tc_oxf002.HeaderText = "Logo";
             this.tc_oxf002.Name = "tc_oxf002";
+            this.tc_oxf002.ReadOnly = true;
             // 
             // dt06
             // 
             this.dt06.HeaderText = "顏色 Màu sắc";
             this.dt06.Name = "dt06";
+            this.dt06.ReadOnly = true;
             // 
             // ima01
             // 
             this.ima01.HeaderText = "料號 MVL";
             this.ima01.Name = "ima01";
+            this.ima01.ReadOnly = true;
             // 
             // ima021
             // 
             this.ima021.HeaderText = "規格 Quy cách";
             this.ima021.Name = "ima021";
+            this.ima021.ReadOnly = true;
             // 
             // tc_oge001
             // 
             this.tc_oge001.HeaderText = "廠別 Xưởng";
             this.tc_oge001.Name = "tc_oge001";
-            // 
-            // oga02
-            // 
-            this.oga02.HeaderText = "出貨日期 Ngày xuất hàng";
-            this.oga02.Name = "oga02";
-            // 
-            // ogb12
-            // 
-            this.ogb12.HeaderText = "裝櫃數量 SL cont";
-            this.ogb12.Name = "ogb12";
+            this.tc_oge001.ReadOnly = true;
             // 
             // oeb12
             // 
             this.oeb12.HeaderText = "訂單數量 SL đặt hàng";
             this.oeb12.Name = "oeb12";
+            this.oeb12.ReadOnly = true;
             // 
             // sfv09
             // 
             this.sfv09.HeaderText = "訂單已入庫量 SL đã nhập kho";
             this.sfv09.Name = "sfv09";
+            this.sfv09.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -999,6 +942,86 @@
             this.btnTraNhapKho.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTraNhapKho.UseVisualStyleBackColor = false;
             // 
+            // clk
+            // 
+            this.clk.DataPropertyName = "clk";
+            this.clk.FalseValue = "False";
+            this.clk.HeaderText = "勾選 Chọn";
+            this.clk.Name = "clk";
+            this.clk.TrueValue = "True";
+            // 
+            // codeqty_wno
+            // 
+            this.codeqty_wno.HeaderText = "工單號碼 Mã đơn công";
+            this.codeqty_wno.Name = "codeqty_wno";
+            this.codeqty_wno.ReadOnly = true;
+            this.codeqty_wno.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codeqty_wno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // workorder_item
+            // 
+            this.workorder_item.HeaderText = "料件編號 Mã vật liệu";
+            this.workorder_item.Name = "workorder_item";
+            this.workorder_item.ReadOnly = true;
+            this.workorder_item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.workorder_item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // codeqty_workid
+            // 
+            this.codeqty_workid.HeaderText = "作業編號 Mã thao tác";
+            this.codeqty_workid.Name = "codeqty_workid";
+            this.codeqty_workid.ReadOnly = true;
+            // 
+            // sfe09
+            // 
+            this.sfe09.HeaderText = "儲位 Vị Trí Lưu";
+            this.sfe09.Name = "sfe09";
+            this.sfe09.ReadOnly = true;
+            this.sfe09.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sfe09.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lima021
+            // 
+            this.lima021.HeaderText = "規格 Quy cách";
+            this.lima021.Name = "lima021";
+            this.lima021.ReadOnly = true;
+            this.lima021.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.lima021.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sfb08
+            // 
+            this.sfb08.HeaderText = "工單數量 Số lượng sx";
+            this.sfb08.Name = "sfb08";
+            this.sfb08.ReadOnly = true;
+            this.sfb08.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sfb08.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // stockin_qtyN
+            // 
+            this.stockin_qtyN.HeaderText = "可入庫量 SL có thể nhập kho";
+            this.stockin_qtyN.Name = "stockin_qtyN";
+            this.stockin_qtyN.ReadOnly = true;
+            this.stockin_qtyN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.stockin_qtyN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // qrc17N2
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.qrc17N2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.qrc17N2.HeaderText = "預設入庫量 SL nhập kho dự tính";
+            this.qrc17N2.Name = "qrc17N2";
+            this.qrc17N2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.qrc17N2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // qrc17
+            // 
+            this.qrc17.HeaderText = "已入庫量 SL đã nhập kho";
+            this.qrc17.Name = "qrc17";
+            this.qrc17.ReadOnly = true;
+            this.qrc17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.qrc17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // ChuyenChungTuNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1011,6 +1034,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyển chứng từ nhập kho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChuyenChungTuNhapKho_FormClosing);
             this.Load += new System.EventHandler(this.ChuyenChungTuNhapKho_Load);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1045,27 +1069,16 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn clk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_wno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workorder_item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_workid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sfe09;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lima021;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sfb08;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockin_qtyN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qrc17N2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qrc17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Button btnHuyChon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbxSDDC;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbxTongSLDaChon;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbxSoLuongCoTheNKConLai;
         private System.Windows.Forms.TextBox tbxSoDong2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Panel panel1;
@@ -1073,20 +1086,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dt00;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ogb31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ogb32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ogaud12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oea03;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tc_oxf002;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt06;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ima01;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ima021;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tc_oge001;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oga02;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ogb12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oeb12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sfv09;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -1118,5 +1117,28 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbxVitri;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dt00;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ogb31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ogb32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ogaud12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oea03;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tc_oxf002;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt06;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ima01;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ima021;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tc_oge001;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oeb12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sfv09;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_wno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workorder_item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_workid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sfe09;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lima021;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sfb08;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockin_qtyN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qrc17N2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qrc17;
     }
 }

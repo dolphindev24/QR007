@@ -71,8 +71,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.clk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.codeqty_wno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeqty_workid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workorder_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeqty_workid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sfe09 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lima021 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sfb08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -567,6 +567,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -574,8 +575,8 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clk,
             this.codeqty_wno,
-            this.codeqty_workid,
             this.workorder_item,
+            this.codeqty_workid,
             this.sfe09,
             this.lima021,
             this.sfb08,
@@ -585,6 +586,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(1250, 158);
             this.dataGridView2.TabIndex = 12;
             // 
@@ -592,32 +594,35 @@
             // 
             this.clk.HeaderText = "勾選 Chọn";
             this.clk.Name = "clk";
+            this.clk.ReadOnly = true;
             // 
             // codeqty_wno
             // 
             this.codeqty_wno.HeaderText = "工單號碼 Mã đơn công";
             this.codeqty_wno.Name = "codeqty_wno";
+            this.codeqty_wno.ReadOnly = true;
             this.codeqty_wno.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.codeqty_wno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // codeqty_workid
-            // 
-            this.codeqty_workid.HeaderText = "Column1作業編號 Mã thao tác";
-            this.codeqty_workid.Name = "codeqty_workid";
-            this.codeqty_workid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codeqty_workid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // workorder_item
             // 
             this.workorder_item.HeaderText = "料件編號 Mã vật liệu";
             this.workorder_item.Name = "workorder_item";
+            this.workorder_item.ReadOnly = true;
             this.workorder_item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.workorder_item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // codeqty_workid
+            // 
+            this.codeqty_workid.HeaderText = "作業編號 Mã thao tác";
+            this.codeqty_workid.Name = "codeqty_workid";
+            this.codeqty_workid.ReadOnly = true;
             // 
             // sfe09
             // 
             this.sfe09.HeaderText = "儲位 Vị Trí Lưu";
             this.sfe09.Name = "sfe09";
+            this.sfe09.ReadOnly = true;
             this.sfe09.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.sfe09.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -625,6 +630,7 @@
             // 
             this.lima021.HeaderText = "規格 Quy cách";
             this.lima021.Name = "lima021";
+            this.lima021.ReadOnly = true;
             this.lima021.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.lima021.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -632,6 +638,7 @@
             // 
             this.sfb08.HeaderText = "工單數量 Số lượng sx";
             this.sfb08.Name = "sfb08";
+            this.sfb08.ReadOnly = true;
             this.sfb08.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.sfb08.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -639,6 +646,7 @@
             // 
             this.stockin_qtyN.HeaderText = "可入庫量 SL có thể nhập kho";
             this.stockin_qtyN.Name = "stockin_qtyN";
+            this.stockin_qtyN.ReadOnly = true;
             this.stockin_qtyN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.stockin_qtyN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -646,6 +654,7 @@
             // 
             this.qrc17N2.HeaderText = "預設入庫量 SL nhập kho dự tính";
             this.qrc17N2.Name = "qrc17N2";
+            this.qrc17N2.ReadOnly = true;
             this.qrc17N2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.qrc17N2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -653,6 +662,7 @@
             // 
             this.qrc17.HeaderText = "已入庫量 SL đã nhập kho";
             this.qrc17.Name = "qrc17";
+            this.qrc17.ReadOnly = true;
             this.qrc17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.qrc17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -728,8 +738,8 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clk;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_wno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_workid;
         private System.Windows.Forms.DataGridViewTextBoxColumn workorder_item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeqty_workid;
         private System.Windows.Forms.DataGridViewTextBoxColumn sfe09;
         private System.Windows.Forms.DataGridViewTextBoxColumn lima021;
         private System.Windows.Forms.DataGridViewTextBoxColumn sfb08;

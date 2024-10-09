@@ -3,6 +3,8 @@ using System.Data;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace QR007.Forms
 {
@@ -10,15 +12,20 @@ namespace QR007.Forms
     {
         private string conn_MESPDB = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.40.31)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=topprod)));User ID=lelong;Password=lelong;";
         private string conn_orclpdb = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.40.12)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MESPDB)));User ID=lelong;Password=lelong;";
-        
+        private string sqltr1;
+
         Connection connect = new Connection();
+        DataTable dt = new DataTable();
         public ChuyenChungTuNhapKho()
         {
             InitializeComponent();
             cbxLoaiDH.SelectedIndex = 0;
-            tbxSoDong.Text = "0"; 
+            tbxSoDong.Text = "0";
             tbxSoDong2.Text = "0";
-            Helper.DoubleBufferded(dataGridView1, true); 
+            tbxSDDC.Text = "0";
+            tbxTongSLDaChon.Text = "0";
+            tbxSoLuongCoTheNKConLai.Text = "0";
+            Helper.DoubleBufferded(dataGridView1, true);
             Helper.DoubleBufferded(dataGridView2, true);
         }
 
@@ -53,8 +60,8 @@ namespace QR007.Forms
             dataGridView1.Columns["ima01"].DataPropertyName = "ima01"; //MVL
             dataGridView1.Columns["ima021"].DataPropertyName = "ima021"; //Quy cach
             dataGridView1.Columns["tc_oge001"].DataPropertyName = "''1"; //Xuong
-            dataGridView1.Columns["oga02"].DataPropertyName = "oga02"; //Ngay xuat hang
-            dataGridView1.Columns["ogb12"].DataPropertyName = "ogb12"; //SL cont
+            //dataGridView1.Columns["oga02"].DataPropertyName = "oga02"; //Ngay xuat hang
+            //dataGridView1.Columns["ogb12"].DataPropertyName = "ogb12"; //SL cont
             dataGridView1.Columns["oeb12"].DataPropertyName = "oeb12"; //SL dat hang
             dataGridView1.Columns["sfv09"].DataPropertyName = "qty"; //SL da nhap
         }
@@ -63,15 +70,16 @@ namespace QR007.Forms
         private void SetColumnHeadersDgv2()
         {
             dataGridView2.AutoGenerateColumns = false;
-
             dataGridView2.Columns["codeqty_wno"].DataPropertyName = "codeqty_wno";
             dataGridView2.Columns["codeqty_workid"].DataPropertyName = "codeqty_workid";
             dataGridView2.Columns["workorder_item"].DataPropertyName = "workorder_item";
-            dataGridView2.Columns["sfe09"].DataPropertyName = "''";
+            dataGridView2.Columns["sfe09"].DataPropertyName = "sfe09";
             dataGridView2.Columns["lima021"].DataPropertyName = "workorder_vnitemspec";
             dataGridView2.Columns["sfb08"].DataPropertyName = "workorder_qty";
             dataGridView2.Columns["stockin_qtyN"].DataPropertyName = "stockin_qtyN";
+            dataGridView2.Columns["qrc17N2"].DataPropertyName = "qrc17N2";
             dataGridView2.Columns["qrc17"].DataPropertyName = "stockin_qty";
+
         }
 
         //Clear field
@@ -81,18 +89,35 @@ namespace QR007.Forms
             tbxQuyCach.Text = string.Empty;
             tbxBoMonCT.Text = string.Empty;
             tbxMVL.Text = string.Empty;
+            tbxMaDonCong.Text = string.Empty;
+            tbxSDDC.Text = string.Empty;
+            tbxTongSLDaChon.Text = string.Empty;
+            tbxSoLuongCoTheNKConLai.Text = string.Empty;
         }
 
         private void ChuyenChungTuNhapKho_Load(object sender, EventArgs e)
         {
             txtID.Text = Helper.ID;
             laytennv();
+
+            dt.Columns.Add("clk", typeof(string));
+            dt.Columns.Add("codeqty_wno", typeof(string));
+            dt.Columns.Add("codeqty_workid", typeof(string));
+            dt.Columns.Add("workorder_item", typeof(string));
+            dt.Columns.Add("sfe09", typeof(string));
+            dt.Columns.Add("lima021", typeof(string));
+            dt.Columns.Add("sfb08", typeof(Double));
+            dt.Columns.Add("stockin_qtyN", typeof(Double));
+            dt.Columns.Add("qrc17N2", typeof(Double));
+            dt.Columns.Add("qrc17", typeof(Double));
         }
 
         //TraCuu Button event
         private void btnTraCuu_Click(object sender, EventArgs e)
-            {
-            switch(cbxLoaiDH.SelectedIndex)
+        {
+            dt.Rows.Clear();
+            dataGridView1.DataSource = dt;
+            switch (cbxLoaiDH.SelectedIndex)
             {
                 case 0: //Xuat khau
                     try
@@ -115,14 +140,46 @@ namespace QR007.Forms
 
                         if (tbxMaDH.Text.Length > 0)
                         {
-                            sql += " AND oeb01 LIKE '%" + tbxMaDH.Text.Trim() + "%'";
+                            string searchByMDH = tbxMaDH.Text.Trim();
+                            searchByMDH = searchByMDH.Replace('*', '%');
+                            sql += " AND oeb01 LIKE '" + searchByMDH + "'";
                         }
 
+                        if (tbxQuyCach.Text.Length > 0)
+                        {
+                            string serachByQC = tbxQuyCach.Text.Trim();
+                            serachByQC = serachByQC.Replace('*', '%');
+                            sql += " AND ima021 LIKE '" + serachByQC + "'";
+                        }
 
-                        DataTable dt = new DataTable(); 
+                        if (tbxBoMonCT.Text.Length > 0)
+                        {
+                            string searchByBMCT = tbxBoMonCT.Text.Trim();
+                            searchByBMCT = searchByBMCT.Replace('*', '%');
+                            sql += " AND sfb82 LIKE'" + searchByBMCT + "'";
+                        }
 
-                        dt = connect.ExcuteQuery(sql);
+                        if (tbxMVL.Text.Length > 0)
+                        {
+                            string searchByMVL = tbxMVL.Text.Trim();
+                            searchByMVL = searchByMVL.Replace('*', '%');
+                            sql += " AND ima01 LIKE'" + searchByMVL + "'";
+                        }
+
+                        OracleDataAdapter dta = new OracleDataAdapter(sql, conn_MESPDB);
+                        dta.Fill(dt);
+                        // Gọi hàm lọc DataTable
+                        dt = FilterDataTable(dt);
+
+                        // Thiết lập dữ liệu đã lọc cho DataGridView
                         SetColumnHeadersDgv1();
+
+                        for (int i = 1; i < dt.Rows.Count; i++)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["clk"] = "False";
+                        }
+
 
                         dataGridView1.DataSource = dt;
 
@@ -157,8 +214,18 @@ namespace QR007.Forms
                        "WHERE oea01 = oeb01 AND oeaconf = 'Y' AND oeb70 = 'N' AND sfb22 = oeb01 " +
                        "AND oeb03 = sfb221 AND oeb01 = ogb31 AND oeb03 = ogb32 " +
                        "AND ta_oeb001 = tc_oxf001(+) AND oga01 = ogb01 AND ima01 = oeb04 " +
-                       "AND sfb87 <> 'X' AND sfb01 IS NOT NULL AND oea04 LIKE 'VNM%' " +
-                       "GROUP BY oeb01, oeb03, oea04, tc_oxf002, ima01, ima021, oga02, oeb12 " +
+                       "AND sfb87 <> 'X' AND sfb01 IS NOT NULL AND oea04 LIKE 'VNM%' ";
+
+                        if (tbxMaDH.Text.Length > 0)
+                        {
+                            string searchByMDH = tbxMaDH.Text.Trim();
+                            sqltr1 = " AND oeb01 LIKE '" + searchByMDH + "' ";
+
+                            searchByMDH = searchByMDH.Replace('*', '%');
+                        }
+                        sqltr += sqltr1;
+
+                        sqltr += "GROUP BY oeb01, oeb03, oea04, tc_oxf002, ima01, ima021, oga02, oeb12 " +
                        "ORDER BY oga02 ASC, oeb01 ASC, oeb03 ASC ) WHERE qty < oeb12 ";
 
                         sqltr += "UNION " +
@@ -174,9 +241,48 @@ namespace QR007.Forms
                             "AND SUBSTR(ksf01,1,5) IN ('BB571') " +
                             "AND (regexp_like(SUBSTR(ksg03,1,2),'[A-Z][0-9]') OR regexp_like(SUBSTR(ksg03,1,2),'[1-9][A-Z]'))";
 
-                        DataTable dt = new DataTable();
-                        dt = connect.ExcuteQuery(sqltr);
+                        if (tbxMaDH.Text.Length > 0)
+                        {
+                            string searchByMDH = tbxMaDH.Text.Trim();
+                            sqltr += " AND ksf01 LIKE '" + searchByMDH + "' ";
+
+                            searchByMDH = searchByMDH.Replace('*', '%');
+                        }
+
+                        if (tbxQuyCach.Text.Length > 0)
+                        {
+                            string serachByQC = tbxQuyCach.Text.Trim();
+                            serachByQC = serachByQC.Replace('*', '%');
+                            sqltr += " AND ima021 LIKE '" + serachByQC + "'";
+                        }
+
+                        if (tbxBoMonCT.Text.Length > 0)
+                        {
+                            string searchByBMCT = tbxBoMonCT.Text.Trim();
+                            searchByBMCT = searchByBMCT.Replace('*', '%');
+                            sqltr += " AND sfb82 LIKE'" + searchByBMCT + "'";
+                        }
+
+                        if (tbxMVL.Text.Length > 0)
+                        {
+                            string searchByMVL = tbxMVL.Text.Trim();
+                            searchByMVL = searchByMVL.Replace('*', '%');
+                            sqltr += " AND ima01 LIKE'" + searchByMVL + "'";
+                        }
+
+                        OracleDataAdapter dta = new OracleDataAdapter(sqltr, conn_MESPDB);
+                        dta.Fill(dt);
+
+                        dt = FilterDataTable(dt);
+
                         SetColumnHeadersDgv1();
+
+                        for (int i = 1; i < dt.Rows.Count; i++)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["clk"] = "False";
+                        }
+
                         dataGridView1.DataSource = dt;
 
                         RowCountDgv1(); //Update rowcount
@@ -201,19 +307,52 @@ namespace QR007.Forms
                         cbxVitri.SelectedIndex = 2;
 
                         string sqltr = "SELECT * FROM ( " +
-                           "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, '', workorder_vnitemspec, workorder_qty, " +
-                           "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(workorder_stockinqty, 0) stockin_qty " +
-                           "FROM QR_CODEQTY, QR_WORKORDER " +
-                           "WHERE codeqty_workid = (SELECT MAX(codeqty_workid) FROM QR_CODEQTY a WHERE a.codeqty_wno = workorder_wno) " +
-                           "AND workorder_wno = codeqty_wno AND workorder_status <> 8 " +
-                           ") WHERE stockin_qtyN > 0";
+                          "SELECT UNIQUE codeqty_wno, codeqty_workid, workorder_item, workorder_vnitemspec, workorder_qty, " +
+                          "NVL(codeqty_dqty - workorder_stockinqty, 0) stockin_qtyN, NVL(codeqty_dqty - workorder_stockinqty, 0) qrc17N2, " +
+                          "NVL(workorder_stockinqty, 0) stockin_qty " +
+                          "FROM QR_CODEQTY, QR_WORKORDER " +
+                          "WHERE codeqty_workid = (SELECT MAX(codeqty_workid) FROM QR_CODEQTY a WHERE a.codeqty_wno = workorder_wno) " +
+                          "AND workorder_wno = codeqty_wno AND workorder_status <> 8 " +
+                          ") WHERE stockin_qtyN > 0";
 
+                        if (tbxMaDonCong.Text.Length > 0)
+                        {
+                            string searchByMDC = tbxMaDonCong.Text.Trim();
+                            searchByMDC = searchByMDC.Replace('*', '%');
+                            sqltr += " AND codeqty_wno LIKE '" + searchByMDC + "'";
+                        }
 
-                        DataTable dt = new DataTable();
-                        dt = connect.ExcuteQuery(sqltr);
+                        if (tbxMaVatLieu1.Text.Length > 0)
+                        {
+                            string searchByMaVL1 = tbxMaVatLieu1.Text.Trim();
+                            searchByMaVL1 = searchByMaVL1.Replace('*', '%');
+                            sqltr += " AND workorder_item LIKE '" + searchByMaVL1 + "'";
+                        }
+
+                        OracleDataAdapter dta = new OracleDataAdapter(sqltr, conn_orclpdb);
+                        dta.Fill(dt);
 
                         SetColumnHeadersDgv2();
+
+                        for (int i = 1; i < dt.Rows.Count; i++)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["clk"] = "False";
+
+                        }
+
                         dataGridView2.DataSource = dt;
+
+                        //get save location
+                        foreach (DataGridViewRow row in dataGridView2.Rows)
+                        {
+                            if (row.Cells["codeqty_wno"].Value != null)
+                            {
+                                string doncong = row.Cells["codeqty_wno"].Value.ToString();
+                                string vitriLuu = check_add_vitriluu1(doncong);
+                                row.Cells["sfe09"].Value = vitriLuu;
+                            }
+                        }
 
                         RowCountDgv2();
                     }
@@ -253,6 +392,18 @@ namespace QR007.Forms
 
         }
 
+        //Calculator so luong nhap kho con lai 
+        private void CalculatorSLNKCL(DataGridViewCellEventArgs e)
+        {
+            //So luong dat hang | oeb12
+            int quantityOrdered = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["oeb12"].Value);
+            //So luong da nhap kho | sfv09
+            int quantityInStock = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["sfv09"].Value);
+
+            int result = quantityOrdered - quantityInStock;
+            tbxSoLuongCoTheNKConLai.Text = result.ToString();
+        }
+
         //Checkbox checked
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -261,13 +412,13 @@ namespace QR007.Forms
                 try
                 {
                     connect.OpenConnect(conn_orclpdb);
-                   // connect.OpenConnect(conn_MESPDB);
+                    // connect.OpenConnect(conn_MESPDB);
 
                     // Get the current value of the checkbox
                     bool isChecked = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["dt00"].Value);
 
                     // Uncheck other checkboxes
-                    UncheckOtherCheckboxes(e.RowIndex);
+                    UncheckOtherCheckboxes(e.RowIndex, dataGridView1, "dt00");
 
                     // Update the value of the current checkbox
                     dataGridView1.Rows[e.RowIndex].Cells["dt00"].Value = !isChecked;
@@ -279,6 +430,9 @@ namespace QR007.Forms
                     if (!isChecked) // If the new checkbox is selected
                     {
                         LoadDataToDatagridview2(ima01Value);
+
+                        CalculatorSLNKCL(e);
+
                         RowCountDgv2();
                     }
                     else
@@ -287,6 +441,16 @@ namespace QR007.Forms
                         dataGridView2.Rows.Clear();
                         RowCountDgv2();
                     }
+
+                    // Uncheck all checkboxes in DataGridView2
+                    foreach (DataGridViewRow row in dataGridView2.Rows)
+                    {
+                        row.Cells["clk"].Value = false; // Uncheck all checkboxes in DataGridView2
+                    }
+
+                    // Reset TextBox to 0 after unchecking all checkboxes in DataGridView2
+                    tbxSDDC.Text = "0";
+                    tbxTongSLDaChon.Text = "0";
                 }
                 catch (Exception ex)
                 {
@@ -295,7 +459,7 @@ namespace QR007.Forms
                 finally
                 {
                     connect.CloseConnect(conn_orclpdb);
-                   // connect.CloseConnect(conn_MESPDB);
+                    // connect.CloseConnect(conn_MESPDB);
                 }
             }
         }
@@ -303,55 +467,56 @@ namespace QR007.Forms
         //Check vi tri
         private string check_add_vitriluu1(string doncong)
         {
-            string checkViTriLuu = string.Empty;
+            string checkViTriLuu = " ";
 
             try
             {
                 connect.OpenConnect(conn_MESPDB);
 
-                    if (doncong.Substring(0, 5) == "BC511" || doncong.Substring(0, 5) == "BB511" ||
-                        doncong.Substring(0, 5) == "BC512" || doncong.Substring(0, 5) == "BB512" ||
-                        doncong.Substring(0, 5) == "BC510" || doncong.Substring(0, 5) == "BC51E")
-                    {
-                        checkViTriLuu = "X";
-                    }
+                if (doncong.Substring(0, 5) == "BC511" || doncong.Substring(0, 5) == "BB511" ||
+                    doncong.Substring(0, 5) == "BC512" || doncong.Substring(0, 5) == "BB512" ||
+                    doncong.Substring(0, 5) == "BC510" || doncong.Substring(0, 5) == "BC51E")
+                {
+                    checkViTriLuu = "X";
+                }
 
-                    if (doncong.Substring(0, 5) == "BB51A" || doncong.Substring(0, 5) == "BC51A" ||
-                        doncong.Substring(0, 5) == "BC51B" || doncong.Substring(0, 5) == "BB51B" ||
-                        doncong.Substring(0, 5) == "BC51C")
-                    {
-                        checkViTriLuu = "T";
-                    }
+                if (doncong.Substring(0, 5) == "BB51A" || doncong.Substring(0, 5) == "BC51A" ||
+                    doncong.Substring(0, 5) == "BC51B" || doncong.Substring(0, 5) == "BB51B" ||
+                    doncong.Substring(0, 5) == "BC51C")
+                {
+                    checkViTriLuu = "T";
+                }
 
-                    if (doncong.Substring(0, 5) == "BC521" || doncong.Substring(0, 5) == "BB521")
-                    {
-                        checkViTriLuu = "T";
-                    }
+                if (doncong.Substring(0, 5) == "BC521" || doncong.Substring(0, 5) == "BB521")
+                {
+                    checkViTriLuu = "T";
+                }
 
-                    if (doncong.Substring(0, 5) == "BC526" || doncong.Substring(0, 5) == "BB526" ||
-                        doncong.Substring(0, 5) == "BC52A" || doncong.Substring(0, 5) == "BB52A")
-                    {
-                        string sqltr1 = "SELECT UNIQUE sfe09 FROM sfe_file WHERE sfe01='" + doncong + "' " +
-                                        "AND regexp_like(SUBSTR(sfe07,1,1), '^[A-Z]') AND regexp_like(SUBSTR(sfe07,2,1), '^[0-9]') ";
+                if (doncong.Substring(0, 5) == "BC526" || doncong.Substring(0, 5) == "BB526" ||
+                    doncong.Substring(0, 5) == "BC52A" || doncong.Substring(0, 5) == "BB52A")
+                {
+                    string sqltr1 = "SELECT UNIQUE sfe09 FROM sfe_file WHERE sfe01='" + doncong + "' " +
+                                    "AND regexp_like(SUBSTR(sfe07,1,1), '^[A-Z]') AND regexp_like(SUBSTR(sfe07,2,1), '^[0-9]') ";
 
-                        using (OracleConnection conn = new OracleConnection(conn_MESPDB))
+                    using (OracleConnection conn = new OracleConnection(conn_MESPDB))
+                    {
+                        conn.Open();
+                        OracleCommand cmd = new OracleCommand(sqltr1,conn);
+                        OracleDataReader dr = cmd.ExecuteReader();
+
+                        if (dr.Read())
                         {
-                            OracleCommand cmd = new OracleCommand(sqltr1);
-                            OracleDataReader dr = cmd.ExecuteReader();
-
-                            if (dr.Read())
+                            if (!dr.IsDBNull(dr.GetOrdinal("sfe09")))
                             {
-                                if (!dr.IsDBNull(dr.GetOrdinal("sfe09")))
-                                {
-                                    checkViTriLuu = dr["sfe09"].ToString();
-                                }
-                                else
-                                {
-                                    checkViTriLuu = "Null";
-                                }
+                                checkViTriLuu = dr["sfe09"].ToString();
+                            }
+                            else
+                            {
+                                checkViTriLuu = "Null";
                             }
                         }
                     }
+                }
             }
             catch (Exception ex)
             {
@@ -364,14 +529,44 @@ namespace QR007.Forms
             return checkViTriLuu;
         }
 
-        //Uncheck checkbox
-        private void UncheckOtherCheckboxes(int currentRowIndex)
+        //check if oeb12 = qty => remove row
+        private DataTable FilterDataTable(DataTable dt)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            // Tạo một DataTable mới để chứa các hàng đã lọc
+            DataTable filteredTable = dt.Clone(); // Clone cấu trúc của DataTable
+
+            foreach (DataRow row in dt.Rows)
             {
-                if (row.Index != currentRowIndex && row.Cells["dt00"].Value != null && (bool)row.Cells["dt00"].Value)
+                object ogb12Value = row["oeb12"];
+                object qtyValue = row["qty"];
+
+                // Kiểm tra giá trị null và loại bỏ hàng nếu oeb12 = qty
+                if (ogb12Value != DBNull.Value && qtyValue != DBNull.Value)
                 {
-                    row.Cells["dt00"].Value = false; // Bỏ chọn checkbox
+                    double oeb12 = Convert.ToDouble(ogb12Value);
+                    decimal qty = Convert.ToDecimal(qtyValue);
+
+                    if (oeb12 != (double)qty)
+                    {
+                        filteredTable.ImportRow(row); // Thêm hàng vào DataTable đã lọc
+                    }
+                }
+                else
+                {
+                    filteredTable.ImportRow(row); // Giữ lại hàng nếu một trong hai giá trị là null
+                }
+            }
+            return filteredTable;
+        }
+
+        //Uncheck checkbox
+        private void UncheckOtherCheckboxes(int currentRowIndex, DataGridView dgv, string checkboxName)
+        {
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (row.Index != currentRowIndex && row.Cells[checkboxName].Value != null && (bool)row.Cells[checkboxName].Value)
+                {
+                    row.Cells[checkboxName].Value = false; // Bỏ chọn checkbox
                 }
             }
         }
@@ -403,10 +598,10 @@ namespace QR007.Forms
 
                             //check cbxViTri value
                             if (cbxVitri.SelectedIndex == 0 && checkViTriLuu == "X" ||
-                                (cbxVitri.SelectedIndex == 1 && checkViTriLuu == "T") || 
+                                (cbxVitri.SelectedIndex == 1 && checkViTriLuu == "T") ||
                                 (cbxVitri.SelectedIndex == 2 && (checkViTriLuu == "X" || checkViTriLuu == "T")))
                             {
-                                dataGridView2.Rows.Add(false,
+                                dataGridView2.Rows.Add("False",
                                                    dt_qrc["codeqty_wno"].ToString(),
                                                    dt_qrc["codeqty_workid"].ToString(),
                                                    dt_qrc["workorder_item"].ToString(),
@@ -424,6 +619,11 @@ namespace QR007.Forms
             //RowCountDgv2();
         }
 
+        private void btnHuyChon_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -435,23 +635,34 @@ namespace QR007.Forms
 
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            // Kiểm tra chỉ số hàng và cột
+            if (e.RowIndex >= 0) // Đảm bảo là hàng hợp lệ
             {
-                if (e.RowIndex % 2 == 0)
-                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                // Nếu cột hiện tại là qrc17N2
+                if (dataGridView2.Columns[e.ColumnIndex].Name == "qrc17N2")
+                {
+                    e.CellStyle.BackColor = Color.LightGoldenrodYellow; // Tô màu đỏ cho cột qrc17N2
+                }
+                else if (e.RowIndex % 2 == 0) // Nếu hàng là hàng chẵn
+                {
+                    e.CellStyle.BackColor = Color.LightGray; // Tô màu xám nhạt cho hàng
+                }
             }
         }
 
         private void cbxLoaiDH_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selected = cbxLoaiDH.SelectedIndex;
-            if(selected == 0)
+            if (selected == 0)
             {
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
                 tbxSoDong2.Text = "0";
                 tbxSoDong.Text = "0";
+                tbxSDDC.Text = "0";
+                tbxTongSLDaChon.Text = "0";
+                tbxSoLuongCoTheNKConLai.Text = "0";
                 Clear();
             }
             else if (selected == 1)
@@ -461,15 +672,21 @@ namespace QR007.Forms
                 dataGridView2.Rows.Clear();
                 tbxSoDong2.Text = "0";
                 tbxSoDong.Text = "0";
+                tbxSDDC.Text = "0";
+                tbxTongSLDaChon.Text = "0";
+                tbxSoLuongCoTheNKConLai.Text = "0";
                 Clear();
             }
-            else if(selected == 2)
+            else if (selected == 2)
             {
                 dataGridView1.DataSource = null;
                 dataGridView2.DataSource = null;
                 dataGridView2.Rows.Clear();
                 tbxSoDong2.Text = "0";
                 tbxSoDong.Text = "0";
+                tbxSDDC.Text = "0";
+                tbxTongSLDaChon.Text = "0";
+                tbxSoLuongCoTheNKConLai.Text = "0";
                 Clear();
             }
         }
@@ -478,7 +695,7 @@ namespace QR007.Forms
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if(row.Cells["dt00"].Value != null && (bool)row.Cells["dt00"].Value == true)
+                if (row.Cells["dt00"].Value != null && (bool)row.Cells["dt00"].Value == true)
                 {
 
                     //row.Cells["dt00"].Value = false;
@@ -495,6 +712,62 @@ namespace QR007.Forms
                     RowCountDgv2();
                 }
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //int DEm = 0;
+            if (e.ColumnIndex == 0)
+            {
+                dataGridView2.EndEdit();
+            }
+        }
+
+        private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int l_sodongdaimport = 0;
+            int DEm = 0;
+            double total = 0;
+
+            // Đếm số checkbox đã được chọn
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                l_sodongdaimport++;
+                // Kiểm tra nếu checkbox được check
+              
+                if (dataGridView2.Rows[i].Cells["clk"].Value.ToString() == "True")
+                {
+                    DEm++; // Đếm số checkbox được chọn
+                    total += Convert.ToDouble(dataGridView2.Rows[i].Cells["qrc17N2"].Value);
+                }
+            }
+
+            // Hiển thị số lượng checkbox đã được check vào tbxSDDC
+            tbxSDDC.Text = DEm.ToString();
+
+            // Hiển thị tổng số lượng đã chọn
+            tbxTongSLDaChon.Text = total.ToString();
+
+            // Kiểm tra nếu tổng số lượng đã chọn lớn hơn số lượng có thể nhập kho còn lại
+            if (!String.IsNullOrEmpty(tbxSoLuongCoTheNKConLai.Text) && total > Convert.ToDouble(tbxSoLuongCoTheNKConLai.Text))
+            {
+                MessageBox.Show("Số lượng nhập kho dự tính không thể lớn hơn số lượng nhập kho còn lại.");
+                dataGridView2.Rows[e.RowIndex].Cells["clk"].Value = "False"; // Uncheck checkbox nếu vượt quá
+                tbxSDDC.Text = (DEm - 1).ToString(); // Giảm số lượng đã chọn
+            }
+
+            // Kiểm tra nếu số checkbox được chọn vượt quá 5
+            if (DEm > 5)
+            {
+                MessageBox.Show("Số dòng được chọn vượt quá giới hạn 5", "Thông báo", MessageBoxButtons.OK);
+                dataGridView2.Rows[e.RowIndex].Cells["clk"].Value = "False"; // Uncheck checkbox nếu vượt quá
+                tbxSDDC.Text = (DEm - 1).ToString(); // Giảm số lượng đã chọn sau khi uncheck
+            }
+        }
+
+        private void ChuyenChungTuNhapKho_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
